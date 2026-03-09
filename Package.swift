@@ -3,12 +3,12 @@
 
 import PackageDescription
 
-let VERSION_ANALYTICS_KIT: PackageDescription.Version = "4.1.0.alpha.1"
+let VERSION_ANALYTICS_KIT: PackageDescription.Version = "4.1.0"
 let VERSION_CRASH_REPORTER: PackageDescription.Version = "4.0.3"
 let VERSION_NETWORK_REACHABILITY: PackageDescription.Version = "2.1.1"
 let VERSION_CUSTOM_BROWSER: PackageDescription.Version = "11.3.0"
-let VERSION_DL_SDK: PackageDescription.Version = "1.0.0.alpha.1"
-let VERSION_PPI_SDK: PackageDescription.Version = "1.2.0.alpha.1"
+let VERSION_DL_SDK: PackageDescription.Version = "1.0.0"
+let VERSION_PPI_SDK: PackageDescription.Version = "1.2.0"
 
 let package = Package(
     name: "PayUIndia-OLW-SDK",
@@ -19,18 +19,15 @@ let package = Package(
             name: "PayUIndia-OLWCore-SDK",
             targets: ["PayUIndia-OLWCore-SDKTarget"]),
         .library(
-            name: "PayUIndia-OLWParams-SDK",
-            targets: ["PayUIndia-OLWParams-SDKTarget"]),
-        .library(
             name: "PayUIndia-OLWUI-SDK",
             targets: ["PayUIndia-OLWUI-SDKTarget"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(name: "PayUIndia-NetworkReachability", url: "https://github.com/payu-intrepos/PayUNetworkReachability-iOS.git", from: VERSION_NETWORK_REACHABILITY),
-        .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", from: VERSION_ANALYTICS_KIT),
+        .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", branch: "alpha"),
         .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
-        .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", from: VERSION_CUSTOM_BROWSER),
+        .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", branch: "alpha"),
         .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", branch: "alpha"),
         .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", branch: "alpha"),
         
@@ -61,7 +58,7 @@ let package = Package(
             path: "PayUIndia-OLWCore-SDKWrapper"
         ),
         
-            .binaryTarget(name: "PayUOLWCoreKit", path: "./PayUOLWCoreKit.xcframework"),
+        .binaryTarget(name: "PayUOLWCoreKit", path: "./PayUOLWCoreKit.xcframework"),
         .binaryTarget(name: "PayUOLWParamKit", path: "./PayUOLWParamKit.xcframework"),
         .binaryTarget(name: "PayUOLWUIKit", path: "./PayUOLWUIKit.xcframework"),
     ]
