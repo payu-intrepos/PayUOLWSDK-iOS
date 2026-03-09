@@ -8,7 +8,7 @@ let VERSION_CRASH_REPORTER: PackageDescription.Version = "4.0.3"
 let VERSION_NETWORK_REACHABILITY: PackageDescription.Version = "2.1.1"
 let VERSION_CUSTOM_BROWSER: PackageDescription.Version = "11.3.0"
 let VERSION_DL_SDK: PackageDescription.Version = "1.0.0.alpha.1"
-
+let VERSION_PPI_SDK: PackageDescription.Version = "1.2.0.alpha.1"
 
 let package = Package(
     name: "PayUIndia-OLW-SDK",
@@ -31,7 +31,8 @@ let package = Package(
         .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", from: VERSION_ANALYTICS_KIT),
         .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
         .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", from: VERSION_CUSTOM_BROWSER),
-        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", from: VERSION_CUSTOM_BROWSER),
+        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", from: VERSION_DL_SDK),
+        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", from: VERSION_PPI_SDK),
         
     ],
     targets: [
@@ -41,6 +42,7 @@ let package = Package(
             dependencies: [
                 .product(name: "PayUIndia-Custom-Browser", package: "PayUIndia-Custom-Browser"),
                 .product(name: "PayUIndia-DL-SDK", package: "PayUIndia-DL-SDK"),
+                .product(name: "PayUIndia-PPI-SDK", package: "PayUIndia-PPI-SDK"),
                 "PayUIndia-OLWCore-SDKTarget",
                 "PayUOLWUIKit"
             ],
