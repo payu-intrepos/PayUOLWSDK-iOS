@@ -31,8 +31,8 @@ let package = Package(
         .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", from: VERSION_ANALYTICS_KIT),
         .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
         .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", from: VERSION_CUSTOM_BROWSER),
-        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", from: VERSION_DL_SDK),
-        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", from: VERSION_PPI_SDK),
+        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", branch: "alpha"),
+        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", from: "alpha"),
         
     ],
     targets: [
