@@ -1,0 +1,1567 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWParamKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class OLWVerifyMpinResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var token: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUSendMPinOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, customerMobile: Swift.String?, requestDateTime: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWPinCodeResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var status: Swift.Int
+  @objc public var message: Swift.String?
+  @objc public var result: PayUOLWParamKit.PayUPinCodeInfo?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUPinCodeInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var pincode: Swift.Int
+  @objc public var city: Swift.String?
+  @objc public var district: Swift.String?
+  @objc public var state: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWPayUIFSCResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var response: PayUOLWParamKit.OLWPayUIFSCResult?
+  @objc public var httpStatus: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWPayUIFSCResult : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var result: PayUOLWParamKit.OLWPayUIFSResultInfo?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class OLWPayUIFSResultInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var bank: Swift.String?
+  @objc public var branch: Swift.String?
+  @objc public var city: Swift.String?
+  @objc public var ifsc: Swift.String?
+  @objc public var micr: Swift.String?
+  @objc public var state: Swift.String?
+  @objc public var office: Swift.String?
+  @objc public var address: Swift.String?
+  @objc public var contact: Swift.String?
+  @objc public var district: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class OLWSentOTPRequest : ObjectiveC.NSObject {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWLoadMoneyResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var referenceIdString: Swift.String?
+  @objc public var data: PayUOLWParamKit.OLWLoadMoneyDataInfo?
+  @objc public var seamlessTxn: Swift.Bool
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWLoadMoneyDataInfo : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var redirectUrl: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWKYCStatusAPIResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var redirectUrl: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWSentOTPResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayULoadMoneyRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String
+  @objc public var customer: PayUOLWParamKit.OLWLoadMoneyCustomerInfo
+  @objc public var surl: Swift.String
+  @objc public var furl: Swift.String
+  @objc public var currency: Swift.String
+  @objc public var loadAmount: Swift.Int
+  @objc public var customerId: Swift.String
+  @objc public var seamlessTxn: Swift.Bool
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, customer: PayUOLWParamKit.OLWLoadMoneyCustomerInfo, surl: Swift.String, furl: Swift.String, currency: Swift.String = "INR", loadAmount: Swift.Int, customerId: Swift.String, seamlessTxn: Swift.Bool = false)
+  @objc deinit
+}
+@objc public class OLWLoadMoneyCustomerInfo : ObjectiveC.NSObject {
+  @objc public var firstName: Swift.String
+  @objc public var lastName: Swift.String?
+  @objc public var email: Swift.String?
+  @objc public var mobileNumber: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(firstName: Swift.String, lastName: Swift.String?, email: Swift.String?, mobileNumber: Swift.String)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWSetWalletLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var descriptionLimit: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerId: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWUpdateCardLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var id: Swift.Int
+  @objc public var clientId: Swift.String?
+  @objc public var programId: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var kycProfileId: Swift.String?
+  @objc public var fundFlowType: Swift.String?
+  @objc public var channelId: Swift.String?
+  @objc public var dailyLimit: Swift.Int
+  @objc public var monthlyLimit: Swift.Int
+  @objc public var yearlyLimit: Swift.Int
+  @objc public var dailyCount: Swift.Int
+  @objc public var monthlyCount: Swift.Int
+  @objc public var yearlyCount: Swift.Int
+  @objc public var outstandingBalance: Swift.Int
+  @objc public var status: Swift.Int
+  @objc public var createdDateTime: Swift.String?
+  @objc public var lastModifiedDateTime: Swift.String?
+  @objc public var perTxnLimit: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUCustomerLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var programId: Swift.Int
+  @objc public var kycProfileId: Swift.Int
+  @objc public var fundFlowType: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var implId: Swift.String?
+  @objc public var runningLimitList: [PayUOLWParamKit.PayURunningLimitItem]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayURunningLimitItem : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var progLimitId: Swift.Int
+  @objc public var yearlyRemainingCount: Swift.Int
+  @objc public var dailyRemainingLimit: Swift.Int
+  @objc public var weeklyRemainingCount: Swift.Int
+  @objc public var dailyAllowedCount: Swift.Int
+  @objc public var limitLevel: Swift.String?
+  @objc public var monthlyAllowedLimit: Swift.Int
+  @objc public var monthlyRemainingLimit: Swift.Int
+  @objc public var yearlyAllowedLimit: Swift.Int
+  @objc public var yearlyAllowedCount: Swift.Int
+  @objc public var perTxnLimit: Swift.Int
+  @objc public var accountNumber: Swift.String?
+  @objc public var dailyRemainingCount: Swift.Int
+  @objc public var dailyAllowedLimit: Swift.Int
+  @objc public var weeklyAllowedLimit: Swift.Int
+  @objc public var outstandingRemainingBalance: Swift.Int
+  @objc public var yearlyRemainingLimit: Swift.Int
+  @objc public var weeklyAllowedCount: Swift.Int
+  @objc public var monthlyAllowedCount: Swift.Int
+  @objc public var monthlyRemainingCount: Swift.Int
+  @objc public var outstandingAllowedBalance: Swift.Int
+  @objc public var weeklyRemainingLimit: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWKYCInitiateAPIResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var redirectUrl: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWChangeMpinResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var customerId: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var accosaRefNo: Swift.String?
+  @objc public var mpinStatus: Swift.String?
+  @objc public var mpinUpdated: Swift.Bool
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWFetchCardLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var cardData: [PayUOLWParamKit.OLWCardLimitDetail]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWCardLimitDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var responseCode: Swift.Int
+  @objc public var id: Swift.Int
+  @objc public var clientId: Swift.Int
+  @objc public var programId: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.Int
+  @objc public var kycProfileId: Swift.Int
+  @objc public var fundFlowType: Swift.Int
+  @objc public var channelId: Swift.Int
+  @objc public var perTxnLimit: Swift.Int
+  @objc public var dailyLimit: Swift.Int
+  @objc public var monthlyLimit: Swift.Int
+  @objc public var yearlyLimit: Swift.Int
+  @objc public var dailyCount: Swift.Int
+  @objc public var yearlyCount: Swift.Int
+  @objc public var monthlyCount: Swift.Int
+  @objc public var outstandingBalance: Swift.Int
+  @objc public var status: Swift.Int
+  @objc public var createdDateTime: Swift.String?
+  @objc public var lastModifiedDateTime: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PayUChangeWalletStatusRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var statusType: Swift.String?
+  @objc public var reserved1: Swift.String?
+  @objc public var reserved2: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, accountNumber: Swift.String?, statusType: Swift.String?, reserved1: Swift.String? = nil, reserved2: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWChangeWalletStatusResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var accountNumber: Swift.String?
+  @objc public var walletDescription: Swift.String?
+  @objc public var accosaRefNo: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUCardInquiryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var last4Digits: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var urn: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUCreateDisputeRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var registeredMobileNo: Swift.String?
+  @objc public var requesterEmail: Swift.String?
+  @objc public var benificiaryMobileNo: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var txnDateTime: Swift.String?
+  @objc public var eventId: Swift.Int
+  @objc public var transactionId: Swift.String?
+  @objc public var merchantName: Swift.String?
+  @objc public var txnAmount: Swift.String?
+  @objc public var disputeReasonId: Swift.String?
+  @objc public var disputeComment: Swift.String?
+  @objc public var createdBy: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String? = nil, urn: Swift.String? = nil, registeredMobileNo: Swift.String? = nil, requesterEmail: Swift.String? = nil, benificiaryMobileNo: Swift.String? = nil, clientTxnId: Swift.String?, txnDateTime: Swift.String?, eventId: Swift.Int, transactionId: Swift.String, merchantName: Swift.String? = nil, txnAmount: Swift.String? = nil, disputeReasonId: Swift.String? = nil, disputeComment: Swift.String? = nil, requestSource: Swift.String? = nil, createdBy: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class OLWKYCStatusAPIRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var eventId: Swift.String?
+  @objc public var kycType: Swift.Int
+  @objc public var kycStatus: Swift.String?
+  @objc public var kycUpdateStatus: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, eventId: Swift.String? = nil, kycType: Swift.Int = 0, kycStatus: Swift.String? = nil, kycUpdateStatus: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWCreateServiceResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var serviceRequestNo: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWMerchantDetailsResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var mid: Swift.String?
+  @objc public var merchantDetails: PayUOLWParamKit.OLWMerchantDetails?
+  @objc public var ifscBankNameMapping: [Swift.String : PayUOLWParamKit.OLWBankInfo]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWMerchantDetails : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var cardBackgroundImage: Swift.String?
+  @objc public var cardOrientation: Swift.String?
+  @objc public var merchantName: Swift.String?
+  @objc public var merchantLogo: Swift.String?
+  @objc public var merchantThemeColor: Swift.String?
+  @objc public var cardTextColor: Swift.String?
+  @objc public var productId: Swift.String?
+  @objc public var cardFee: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWBankInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var ibiboCode: Swift.String?
+  @objc public var imageURL: Swift.String?
+  @objc public var name: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PayUMerchantDetailRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var ifscCodes: [Swift.String]
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, ifscCodes: [Swift.String])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWFetchBeneficiaryLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var id: Swift.Int
+  @objc public var beneficiaryId: Swift.String?
+  @objc public var programId: Swift.Int
+  @objc public var perTxnLimit: Swift.Int
+  @objc public var dailyLimit: Swift.Int
+  @objc public var monthlyLimit: Swift.Int
+  @objc public var yearlyLimit: Swift.Int
+  @objc public var dailyCount: Swift.Int
+  @objc public var monthlyCount: Swift.Int
+  @objc public var yearlyCount: Swift.Int
+  @objc public var availableMonthlyLimit: Swift.Int
+  @objc public var availableMonthlyCount: Swift.Int
+  @objc public var coolingOffPeriod: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUDisputeListRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var mobile: Swift.String?
+  @objc public var fromDate: Swift.String?
+  @objc public var toDate: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String? = nil, urn: Swift.String? = nil, mobile: Swift.String? = nil, fromDate: Swift.String?, toDate: Swift.String?)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWFetchAllServiceResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var serviceRequest: [PayUOLWParamKit.OLWServiceRequestDetail]?
+  @objc deinit
+}
+@objc public class PayUInitiateFullKycRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  public var modeId: Swift.Int?
+  @objc public var redirectionUrl: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, modeId: Swift.Int = 0, redirectionUrl: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUDisputeDetailRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var viewServiceRequestId: Swift.Int
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, viewServiceRequestId: Swift.Int)
+  @objc deinit
+}
+@objc public class PayUTransactionHistoryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var last4Digits: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var fromDate: Swift.String?
+  @objc public var toDate: Swift.String?
+  @objc public var pageNumber: Swift.Int
+  @objc public var count: Swift.Int
+  @objc public var fromRowId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, customerId: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String?, fromDate: Swift.String? = nil, toDate: Swift.String? = nil, pageNumber: Swift.Int = 0, count: Swift.Int = 0, fromRowId: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUPinCodeRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var pinCode: Swift.String
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, pinCode: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWStatementInquiryResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientId: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var txnDescription: Swift.String?
+  @objc public var availableBalance: Swift.String?
+  @objc public var openingBalance: Swift.String?
+  @objc public var closingBalance: Swift.String?
+  @objc public var availableCashLimit: Swift.String?
+  @objc public var pageNumber: Swift.Int
+  @objc public var count: Swift.Int
+  @objc public var transactionLeft: Swift.Bool
+  @objc public var cardNumber: Swift.String?
+  @objc public var cardExpiry: Swift.String?
+  @objc public var cardCVV2: Swift.String?
+  @objc public var cardStatus: Swift.String?
+  @objc public var statementDetails: [PayUOLWParamKit.OLWStatementDetail]?
+  @objc public var subwalletListDetails: [PayUOLWParamKit.OLWSubwalletDetail]?
+  @objc public var cardHolder: PayUOLWParamKit.OLWCardHolder?
+  @objc public var activationTimeStamp: Swift.String?
+  @objc public var lastActivityTimeStamp: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWStatementDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var merchantName: Swift.String?
+  @objc public var transactionType: Swift.String?
+  @objc public var transactionAmount: Swift.String?
+  @objc public var feeAmount: Swift.String?
+  @objc public var transactionDate: Swift.String?
+  @objc public var transactionNarration: Swift.String?
+  @objc public var merchantCity: Swift.String?
+  @objc public var transRefNumber: Swift.String?
+  @objc public var eventId: Swift.Int
+  @objc public var rowId: Swift.Int
+  @objc public var txnId: Swift.Int
+  @objc public var stan: Swift.String?
+  @objc public var rrn: Swift.String?
+  @objc public var approvalCode: Swift.String?
+  @objc public var isMerchantTxn: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var authEpfTxnId: Swift.String?
+  @objc public var subWalletId: Swift.String?
+  @objc public var walletName: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var id: Swift.String?
+  @objc public var mid: Swift.String?
+  @objc public var isBalanceImpacted: Swift.Bool
+  @objc public var passbookValue: Swift.String?
+  @objc public var mccBuffer: Swift.String?
+  @objc public var crossCurrencyMarkup: Swift.String?
+  @objc public var crossCurrencyTxnFee: Swift.String?
+  @objc public var originalTxnAmount: Swift.String?
+  @objc public var txnReverseFeeAmt: Swift.String?
+  @objc public var implId: Swift.String?
+  @objc public var mcc: Swift.String?
+  @objc public var acceptorNameLocation: Swift.String?
+  @objc public var acceptorMerchantId: Swift.String?
+  @objc public var acceptorTerminalId: Swift.String?
+  @objc public var remarks: Swift.String?
+  @objc public var acquirerCountryCode: Swift.String?
+  @objc public var txnCurrency: Swift.String?
+  @objc public var txnFeeAmt: Swift.String?
+  @objc public var acquirerTransactionDateTime: Swift.String?
+  @objc public var billingCurrency: Swift.String?
+  @objc public var billingAmt: Swift.String?
+  @objc public var billingFeeAmt: Swift.String?
+  @objc public var openningBalance: Swift.String?
+  @objc public var closingBalance: Swift.String?
+  @objc public var reserved1: Swift.String?
+  @objc public var reserved2: Swift.String?
+  @objc public var sourceTransactionAmount: Swift.String?
+  @objc public var currencyConversionRate: Swift.String?
+  @objc public var serviceRequestNo: Swift.Int
+  @objc public var txnType: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(transactionAmount: Swift.String?, transactionDate: Swift.String?, transRefNumber: Swift.String?, clientTxnId: Swift.String?, status: Swift.String?, authEpfTxnId: Swift.String?, reserved2: Swift.String?, merchantName: Swift.String?, serviceRequestNo: Swift.Int)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWCardHolder : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var cardProfileId: Swift.Int
+  @objc public var cardholderFirstName: Swift.String?
+  @objc public var cardholderLastName: Swift.String?
+  @objc public var cardholderMobile: Swift.String?
+  @objc public var cardholderEmail: Swift.String?
+  @objc public var cardholderCity: Swift.String?
+  @objc public var cardholderState: Swift.String?
+  @objc public var cardholderCountry: Swift.String?
+  @objc public var cardholderZipCode: Swift.String?
+  @objc public var cardholderDateOfBirth: Swift.String?
+  @objc public var isPanValid: Swift.Int
+  @objc public var ovdType: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class OLWBaseResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var responseCode: Swift.String?
+  @objc public var responseMessage: Swift.String?
+  @objc public var issueCode: Swift.String?
+  @objc public var errorMessage: Swift.String?
+  @objc public var errorType: Swift.String?
+  @objc public var referenceId: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWMinKycResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var customerId: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var accosaRefNo: Swift.String?
+  @objc public var formFactor: PayUOLWParamKit.OLWMinKycFormFactor?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWMinKycFormFactor : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var uniqueNumber: Swift.String?
+  @objc public var urn: Swift.Int
+  @objc public var securityCode: Swift.String?
+  @objc public var uniqueNumberExpiry: Swift.String?
+  @objc public var accountDetails: [PayUOLWParamKit.OLWMinKycAccountDetail]?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWMinKycAccountDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accountNumber: Swift.String?
+  @objc public var accountNumberExpiry: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWPhysicalCardResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var customerId: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var cardUrn: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUCustomerDetailRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, customerId: Swift.String? = nil, urn: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWRetrieveCustomerResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var entityName: Swift.String?
+  @objc public var kycName: Swift.String?
+  @objc public var kycStatus: Swift.String?
+  @objc public var profileId: Swift.Int
+  @objc public var createdOn: Swift.String?
+  @objc public var updatedOn: Swift.String?
+  @objc public var ovdName: Swift.String?
+  @objc public var firstName: Swift.String?
+  @objc public var lastName: Swift.String?
+  @objc public var dob: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var mobile: Swift.String?
+  @objc public var reKyc: Swift.Bool
+  @objc public var riskCategory: Swift.String?
+  @objc public var riskScore: Swift.Int
+  @objc public var reKycExpiry: Swift.String?
+  @objc public var form60: Swift.Bool
+  @objc public var form60Expiry: Swift.String?
+  @objc public var email: Swift.String?
+  @objc public var docList: [PayUOLWParamKit.OLWCustomerDoc]?
+  @objc public var panValid: Swift.Bool
+  @objc public var migratedUserFlag: Swift.Bool
+  @objc public var dormancy: Swift.Bool
+  @objc public var rekycValidity: Swift.String?
+  @objc public var form60Validity: Swift.String?
+  @objc public var isMpinSet: Swift.Bool
+  @objc public var mpinExpired: Swift.Bool
+  @objc public var cardList: [PayUOLWParamKit.OLWCardInfo]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWCustomerDoc : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var docType: Swift.String?
+  @objc public var docNumber: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWCardInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var cardNumber: Swift.String?
+  @objc public var lastFourDigit: Swift.String?
+  @objc public var productProfile: Swift.String?
+  @objc public var cardStatus: Swift.Int
+  @objc public var availableBalance: Swift.Int
+  @objc public var createdOn: Swift.String?
+  @objc public var updatedOn: Swift.String?
+  @objc public var urn: Swift.Int
+  @objc public var statusDescription: Swift.String?
+  @objc public var transactionProfiles: [PayUOLWParamKit.OLWTransactionProfile]?
+  @objc public var subwalletListDetails: [PayUOLWParamKit.OLWSubwalletDetail]?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWTransactionProfile : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var transactionProfileId: Swift.Int
+  @objc public var status: Swift.Bool
+  @objc public var transactionType: Swift.String?
+  @objc public var transactionRegionName: Swift.String?
+  @objc public var updateFlag: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWSubwalletDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var subwalletId: Swift.String?
+  @objc public var defaultWallet: Swift.Int
+  @objc public var availableBalance: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var accountStatus: Swift.String?
+  @objc public var subwalletName: Swift.String?
+  @objc public var accountNumberValidity: Swift.String?
+  @objc public var ledgerBalance: Swift.String?
+  @objc public var authorizedAmount: Swift.String?
+  @objc public var settledAmount: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWViewSpecificServiceResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var serviceRequest: PayUOLWParamKit.OLWServiceRequestDetail?
+  override public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc public class OLWServiceRequestDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var serviceRequestNo: Swift.Int
+  @objc public var currentStatus: Swift.String?
+  @objc public var txnDateTime: Swift.String?
+  @objc public var transactionId: Swift.String?
+  @objc public var merchantName: Swift.String?
+  @objc public var txnAmount: Swift.String?
+  @objc public var urn: Swift.Int
+  @objc public var createdBy: Swift.String?
+  @objc public var disputeReason: Swift.String?
+  @objc public var disputeComment: Swift.String?
+  @objc public var createdDateTime: Swift.String?
+  @objc public var csrFileName: Swift.String?
+  @objc public var internalComment: Swift.String?
+  @objc public var operationComment: Swift.String?
+  @objc public var lastModifyDate: Swift.String?
+  @objc public var requestSource: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(currentStatus: Swift.String?, txnDateTime: Swift.String?, transactionId: Swift.String?, merchantName: Swift.String?, txnAmount: Swift.String?, disputeReason: Swift.String?, disputeComment: Swift.String?, createdDateTime: Swift.String?, requestSource: Swift.String?, serviceRequestNo: Swift.Int, operationComment: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWResetCardPinResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var cardDescription: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var accosaRefNo: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUMinKycRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var productId: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerDetails: PayUOLWParamKit.CustomerDetails?
+  @objc public var sorCustomerId: Swift.String?
+  @objc public var addressDetails: PayUOLWParamKit.AddressDetails?
+  @objc public var kycProfile: Swift.Int
+  @objc public var riskCategory: Swift.String?
+  @objc public var formFactorRequired: Swift.Bool
+  @objc public var docList: [PayUOLWParamKit.CustomerDocList]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, productId: Swift.Int, clientTxnId: Swift.String, customerDetails: PayUOLWParamKit.CustomerDetails, sorCustomerId: Swift.String? = nil, addressDetails: PayUOLWParamKit.AddressDetails? = nil, kycProfile: Swift.Int, riskCategory: Swift.String, formFactorRequired: Swift.Bool, docList: [PayUOLWParamKit.CustomerDocList]? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class CustomerDetails : ObjectiveC.NSObject {
+  @objc public var customerId: Swift.String?
+  @objc public var title: Swift.String?
+  @objc public var firstName: Swift.String
+  @objc public var lastName: Swift.String?
+  @objc public var middleName: Swift.String?
+  @objc public var gender: Swift.String?
+  @objc public var dateOfBirth: Swift.String?
+  @objc public var mobileNumber: Swift.String
+  @objc public var emailAddress: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(customerId: Swift.String?, title: Swift.String?, firstName: Swift.String, lastName: Swift.String?, middleName: Swift.String?, gender: Swift.String?, dateOfBirth: Swift.String?, mobileNumber: Swift.String, emailAddress: Swift.String?)
+  #endif
+  @objc deinit
+}
+@objc public class AddressDetails : ObjectiveC.NSObject {
+  @objc public var address: Swift.String?
+  @objc public var address2: Swift.String?
+  @objc public var city: Swift.String?
+  @objc public var state: Swift.String?
+  @objc public var country: Swift.String?
+  @objc public var zipCode: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(address: Swift.String? = nil, address2: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, country: Swift.String? = nil, zipCode: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class CustomerDocList : ObjectiveC.NSObject {
+  @objc public var ovdType: Swift.String?
+  @objc public var ovdNo: Swift.String?
+  @objc public var ovdExpDate: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(ovdType: Swift.String, ovdNo: Swift.String, ovdExpDate: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUSetResetMPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var newMpin: Swift.String?
+  @objc public var otp: Swift.String?
+  @objc public var action: Swift.String?
+  @objc public var oldMpin: Swift.String?
+  @objc public var deviceId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, newMpin: Swift.String? = nil, otp: Swift.String? = nil, action: Swift.String? = nil, oldMpin: Swift.String? = nil, deviceId: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PaymentResponseModel : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class PaymentMetaData : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWAddBeneficiaryResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var beneficiaryId: Swift.Int
+  @objc public var beneficiaryTypeCode: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUChangeCardChannelStatusRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var enablementType: Swift.Int
+  @objc public var transactionProfile: [PayUOLWParamKit.OLWTransactionProfile]
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil, enablementType: Swift.Int = 0, transactionProfile: [PayUOLWParamKit.OLWTransactionProfile])
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWTransactionProfileResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var descriptionMessage: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var transactionProfile: [PayUOLWParamKit.OLWTransactionProfile]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUPhysicalCardRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var cardUrn: Swift.String?
+  @objc public var programId: Swift.String?
+  @objc public var addressDetails: PayUOLWParamKit.PayUPhysicalCardAddressDetails?
+  @objc public var nameOnCard: Swift.String?
+  @objc public var cardFee: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, customerId: Swift.String?, urn: Swift.String?, programId: Swift.String?, nameOnCard: Swift.String?, cardFee: Swift.String? = "0", addressDetails: PayUOLWParamKit.PayUPhysicalCardAddressDetails?)
+  #endif
+  @objc deinit
+}
+@objc public class PayUPhysicalCardAddressDetails : ObjectiveC.NSObject {
+  @objc public var name: Swift.String?
+  @objc public var addressLine1: Swift.String?
+  @objc public var addressLine2: Swift.String?
+  @objc public var city: Swift.String?
+  @objc public var state: Swift.String?
+  @objc public var country: Swift.String?
+  @objc public var zipCode: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(name: Swift.String?, addressLine1: Swift.String?, addressLine2: Swift.String?, city: Swift.String?, state: Swift.String?, country: Swift.String?, zipCode: Swift.String?)
+  #endif
+  @objc deinit
+}
+@objc public class PayUCreateBeneficiaryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var bankName: Swift.String?
+  @objc public var beneficiaryName: Swift.String?
+  @objc public var bankAccountNumber: Swift.String?
+  @objc public var ifscCode: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var beneficiaryTypeCode: Swift.Int
+  @objc public var maxTransactionAmountPerMonth: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.Int, clientTxnId: Swift.String, customerId: Swift.String? = nil, urn: Swift.String? = nil, customerMobile: Swift.String? = nil, bankName: Swift.String? = nil, beneficiaryName: Swift.String, bankAccountNumber: Swift.String? = nil, ifscCode: Swift.String? = nil, requestDateTime: Swift.String, beneficiaryTypeCode: Swift.Int, maxTransactionAmountPerMonth: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUDeleteBeneficiaryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String
+  @objc public var clientTxnId: Swift.String
+  @objc public var urn: Swift.Int
+  @objc public var beneficiaryId: Swift.String
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var customerId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String, clientTxnId: Swift.String, beneficiaryId: Swift.String, customerMobile: Swift.String?, customerId: Swift.String?, urn: Swift.Int, requestDateTime: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUPaymentLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWFetchBeneficiaryListResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var beneficiaryDataList: [PayUOLWParamKit.OLWBeneficiaryData]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWBeneficiaryData : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var beneficiaryId: Swift.Int
+  @objc public var beneficiaryName: Swift.String?
+  @objc public var bankName: Swift.String?
+  @objc public var bankAccountNumber: Swift.String?
+  @objc public var ifscCode: Swift.String?
+  @objc public var upiVpa: Swift.String?
+  @objc public var mobileNumber: Swift.String?
+  @objc public var emailId: Swift.String?
+  @objc public var walletProgram: Swift.String?
+  @objc public var status: Swift.Int
+  @objc public var coolingOff: Swift.Int
+  @objc public var beneficiaryType: Swift.Int
+  @objc public var beneficiaryTypeCode: Swift.Int
+  @objc public var createdTime: Swift.String?
+  @objc public var modifiedTime: Swift.String?
+  @objc public var maxTransactionAmountPerMonth: Swift.Int
+  @objc public var beneficiaryLimitOutstandingMonthlyLimit: Swift.Int
+  @objc public var beneficiaryMaxCountTransactionsPerMonthOutstandingLimit: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(beneficiaryId: Swift.Int = 0, beneficiaryName: Swift.String?, bankName: Swift.String?, bankAccountNumber: Swift.String?, ifscCode: Swift.String?, upiVpa: Swift.String?, mobileNumber: Swift.String?, emailId: Swift.String?, walletProgram: Swift.String?, status: Swift.Int = 0, coolingOff: Swift.Int = 0, beneficiaryType: Swift.Int = 0, beneficiaryTypeCode: Swift.Int = 0, createdTime: Swift.String?, modifiedTime: Swift.String?, maxTransactionAmountPerMonth: Swift.Int = 0, beneficiaryLimitOutstandingMonthlyLimit: Swift.Int = 0, beneficiaryMaxCountTransactionsPerMonthOutstandingLimit: Swift.Int = 0)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWJITResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var clientId: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var jitSpendCapLimit: [PayUOLWParamKit.OLWJITSpendCapLimit]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWJITSpendCapLimit : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accountNumber: Swift.String?
+  @objc public var jitSpendCap: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class OLWDeleteBeneficiaryResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var beneficiaryId: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWCardInqueryResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var cardDescription: Swift.String?
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var cardNumber: Swift.String?
+  @objc public var cardExpiry: Swift.String?
+  @objc public var cardCVV2: Swift.String?
+  @objc public var cardStatus: Swift.String?
+  @objc public var availableBalance: Swift.String?
+  @objc public var availableCashLimit: Swift.String?
+  @objc public var subwalletListDetails: [PayUOLWParamKit.OLWSubwalletDetail]?
+  @objc public var cardHolder: PayUOLWParamKit.OLWCardHolder?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUUpdateBeneficiaryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String
+  @objc public var beneficiaryId: Swift.Int
+  @objc public var requestDateTime: Swift.String?
+  @objc public var beneficiaryType: Swift.String?
+  @objc public var beneficiaryName: Swift.String?
+  @objc public var maxTransactionAmountPerMonth: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, beneficiaryId: Swift.Int, beneficiaryName: Swift.String? = nil, maxTransactionAmountPerMonth: Swift.String? = nil, requestDateTime: Swift.String? = nil, beneficiaryType: Swift.String? = "SELF")
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWTransactionStatusResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var beneficiaryId: Swift.String?
+  @objc public var newBeneficiaryType: Swift.String?
+  @objc public var beneficiaryTypeCode: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUFetchCardLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, urn: Swift.String?)
+  #endif
+  @objc deinit
+}
+@objc public class PayUResetCardPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var last4Digits: Swift.String?
+  @objc public var newPIN: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var urn: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, newPIN: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWUpdateBeneficiaryResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var beneficiaryId: Swift.String?
+  @objc public var newBeneficiaryType: Swift.String?
+  @objc public var beneficiaryTypeCode: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUGetBeneficiaryListRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var beneficiaryId: Swift.String?
+  @objc public var activationStatus: Swift.String?
+  @objc public var transferType: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerId: Swift.String? = nil, urn: Swift.String? = nil, customerMobile: Swift.String? = nil, beneficiaryId: Swift.String? = nil, activationStatus: Swift.String? = nil, transferType: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class OLWTransactionStatusRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var last4Digits: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWFetchPaymentLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var fundFlowType: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var implId: Swift.String?
+  @objc public var kycProfileId: Swift.Int
+  @objc public var programId: Swift.Int
+  @objc public var paymentLimits: [PayUOLWParamKit.OLWPaymentLimitDetail]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWPaymentLimitDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var progLimitId: Swift.Int
+  @objc public var yearlyRemainingCount: Swift.Int
+  @objc public var dailyRemainingLimit: Swift.Int
+  @objc public var weeklyRemainingCount: Swift.Int
+  @objc public var dailyAllowedCount: Swift.Int
+  @objc public var limitLevel: Swift.String?
+  @objc public var monthlyAllowedLimit: Swift.Int
+  @objc public var monthlyRemainingLimit: Swift.Int
+  @objc public var yearlyAllowedLimit: Swift.Int
+  @objc public var yearlyAllowedCount: Swift.Int
+  @objc public var perTxnLimit: Swift.Int
+  @objc public var accountNumber: Swift.String?
+  @objc public var dailyRemainingCount: Swift.Int
+  @objc public var dailyAllowedLimit: Swift.Int
+  @objc public var weeklyAllowedLimit: Swift.Int
+  @objc public var outstandingRemainingBalance: Swift.Int
+  @objc public var yearlyRemainingLimit: Swift.Int
+  @objc public var weeklyAllowedCount: Swift.Int
+  @objc public var monthlyAllowedCount: Swift.Int
+  @objc public var monthlyRemainingCount: Swift.Int
+  @objc public var outstandingAllowedBalance: Swift.Int
+  @objc public var weeklyRemainingLimit: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PayUCustomerLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String
+  @objc public var fundFlowType: Swift.String
+  @objc public var implId: Swift.String
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String, fundFlowType: Swift.String, implId: Swift.String)
+  @objc deinit
+}
+@objc public class PayUUpdateWalletLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var walletLimits: [PayUOLWParamKit.OLWSetUpdateWalletLimit]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, clientTxnId: Swift.String?, walletLimits: [PayUOLWParamKit.OLWSetUpdateWalletLimit]?)
+  #endif
+  @objc deinit
+}
+@objc public class OLWSetUpdateWalletLimit : ObjectiveC.NSObject {
+  @objc public var accountNumber: Swift.String?
+  @objc public var perTransactionLimit: Swift.Double
+  @objc public var dailyUnloadLimit: Swift.Double
+  @objc public var monthlyUnloadLimit: Swift.Double
+  @objc public var annualUnloadLimit: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(accountNumber: Swift.String?, perTransactionLimit: Swift.Double, dailyUnloadLimit: Swift.Double, monthlyUnloadLimit: Swift.Double, annualUnloadLimit: Swift.Double)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWUpdateProfileResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var customerId: Swift.String?
+  @objc public var status: Swift.String?
+  @objc public var message: Swift.String?
+  @objc public var updatedFields: [Swift.String]?
+  @objc deinit
+}
+@objc public class OLWBlockUnBlockCardRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var last4Digits: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var blockType: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var reserved1: Swift.String?
+  @objc public var reserved2: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String? = nil, blockType: Swift.String? = nil, customerId: Swift.String? = nil, reserved1: Swift.String? = nil, reserved2: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWW2AIMPSFundTransferResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var accosaRefNo: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var transactionAmount: Swift.Int
+  @objc public var transactionId: Swift.String?
+  @objc public var metaDataStatus: Swift.String?
+  @objc public var resourceDataStatus: Swift.String?
+  @objc public var transactionReferenceNo: Swift.String?
+  @objc public var beneficiaryName: Swift.String?
+  @objc public var reason: Swift.String?
+  @objc public var token: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUUpdateProfileRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var productId: Swift.String?
+  @objc public var cardProfileId: Swift.String?
+  @objc public var customerDetails: PayUOLWParamKit.CustomerDetails?
+  @objc public var addressDetails: PayUOLWParamKit.AddressDetails?
+  @objc public var docList: [PayUOLWParamKit.CustomerDocList]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerId: Swift.String?, productId: Swift.String?, cardProfileId: Swift.String?, customerDetails: PayUOLWParamKit.CustomerDetails? = nil, addressDetails: PayUOLWParamKit.AddressDetails? = nil, docList: [PayUOLWParamKit.CustomerDocList]? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUVerifyMPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var mpin: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var token: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, mpin: Swift.String? = nil, deviceId: Swift.String? = nil, requestDateTime: Swift.String? = nil, token: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWRetrieveCustomerJITResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var status: Swift.String?
+  @objc public var message: Swift.String?
+  @objc public var fetchCustomerResponse: PayUOLWParamKit.OLWRetrieveCustomerResponse?
+  @objc public var fetchJitResponse: PayUOLWParamKit.OLWJITResponse?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWBlockUnBlockCardResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var urn: Swift.Int
+  @objc public var customerId: Swift.String?
+  @objc public var cardDescription: Swift.String?
+  @objc public var messageCode: Swift.String?
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var accosaRefNo: Swift.String?
+  @objc public var bankId: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUW2WFundTransferRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var requestIp: Swift.String?
+  @objc public var senders: [PayUOLWParamKit.OLWW2WFundTransferSender]?
+  @objc public var receivers: [PayUOLWParamKit.OLWW2WFundTransferReceiver]?
+  @objc public var mpin: Swift.String?
+  @objc public var token: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var otp: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String?, requestIp: Swift.String?, senders: [PayUOLWParamKit.OLWW2WFundTransferSender]?, receivers: [PayUOLWParamKit.OLWW2WFundTransferReceiver]?, mpin: Swift.String?, token: Swift.String?, deviceId: Swift.String?, otp: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class OLWW2WFundTransferSender : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var urn: Swift.Int
+  @objc public var accountNumber: Swift.String?
+  @objc public var transactionAmount: Swift.Int
+  @objc public var sourceAccountType: Swift.Int
+  @objc public var sourceAccount: Swift.String?
+  @objc public var reserved1: Swift.String?
+  @objc public var reserved2: Swift.String?
+  @objc public var reserved3: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var accosaRefNo: Swift.Int
+  @objc public var availaleBalance: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init(urn: Swift.Int, accountNumber: Swift.String?, transactionAmount: Swift.Int, sourceAccountType: Swift.Int, sourceAccount: Swift.String? = nil, reserved1: Swift.String?, reserved2: Swift.String?, reserved3: Swift.String?, customerId: Swift.String? = nil, accosaRefNo: Swift.Int = 0, availaleBalance: Swift.String? = nil)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class OLWW2WFundTransferReceiver : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var urn: Swift.Int
+  @objc public var accountNumber: Swift.String?
+  @objc public var transactionAmount: Swift.Int
+  @objc public var reserved4: Swift.String?
+  @objc public var reserved5: Swift.String?
+  @objc public var reserved6: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var accosaRefNo: Swift.Int
+  @objc public var availaleBalance: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc required public init(urn: Swift.Int, accountNumber: Swift.String? = nil, transactionAmount: Swift.Int, reserved4: Swift.String?, reserved5: Swift.String?, reserved6: Swift.String? = nil, customerId: Swift.String?, accosaRefNo: Swift.Int, availaleBalance: Swift.String?)
+  #endif
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc open class PayUOLWParams : ObjectiveC.NSObject {
+  @objc public var merchantKey: Swift.String
+  @objc public var isProduction: Swift.Bool
+  @objc public var merchantLogo: Swift.String?
+  @objc public var primaryColor: Swift.String?
+  @objc public var customerMobile: Swift.String
+  @objc public var termsAndConditionsURL: Swift.String?
+  @objc public var merchantSupportEmail: Swift.String?
+  @objc public var surl: Swift.String?
+  @objc public var furl: Swift.String?
+  @objc public var kycRedirectionUrl: Swift.String?
+  @objc public var payUReferenceId: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(merchantKey: Swift.String, merchantLogo: Swift.String?, primaryColor: Swift.String?, customerMobile: Swift.String, termsAndConditionsURL: Swift.String?, merchantSupportEmail: Swift.String?, isProd: Swift.Bool = true, kycRedirectionUrl: Swift.String?, payUReferenceId: Swift.String)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUOLWParamHashConstants : ObjectiveC.NSObject {
+  @objc public static let hashString: Swift.String
+  @objc public static let hashType: Swift.String
+  @objc public static let hashName: Swift.String
+  @objc public static let postSalt: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class PayUOLWBaseRequest : ObjectiveC.NSObject {
+  @objc public var payUReferenceId: Swift.String
+  @objc public var merchantKey: Swift.String
+  @objc public var isProduction: Swift.Bool
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool = true)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWVerifyOTPResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var httpStatusCode: Swift.Int
+  @objc public var token: Swift.String?
+  @objc public var attemptsLeft: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUW2AFundTransferRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var clientTxnId: Swift.String?
+  @objc public var requestDateTime: Swift.String?
+  @objc public var customerMobile: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var requestIp: Swift.String?
+  @objc public var creditAccountNumber: Swift.String?
+  @objc public var beneficiaryIFSC: Swift.String?
+  @objc public var paymentDescription: Swift.String?
+  @objc public var transferType: Swift.Int
+  @objc public var currency: Swift.String?
+  @objc public var amount: Swift.String?
+  @objc public var receiverInfo: Swift.String?
+  @objc public var mpin: Swift.String?
+  @objc public var token: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var otp: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, customerId: Swift.String?, accountNumber: Swift.String? = nil, requestIp: Swift.String?, creditAccountNumber: Swift.String?, beneficiaryIFSC: Swift.String?, paymentDescription: Swift.String? = nil, transferType: Swift.Int, currency: Swift.String? = "INR", amount: Swift.String? = nil, receiverInfo: Swift.String? = nil, mpin: Swift.String?, token: Swift.String?, deviceId: Swift.String?, otp: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUSendOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var mobileNumber: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWSendOTPResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var httpStatusCode: Swift.Int
+  @objc public var uuid: Swift.String?
+  @objc public var otpValidityTimer: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUFetchWalletLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var customerId: Swift.String?
+  @objc public var accountNumber: [Swift.String]
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, accountNumber: [Swift.String])
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWSetResetMpinResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var token: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var tokenExpiryTime: Swift.String?
+  @objc public var mpinExpiryTime: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUVerifyOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var mobileNumber: Swift.String?
+  @objc public var otp: Swift.String?
+  @objc public var uuid: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?, otp: Swift.String?, uuid: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWResendOTPResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var httpStatusCode: Swift.Int
+  @objc public var uuid: Swift.String?
+  @objc public var resendCountLeft: Swift.Int
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class PayUCreateCardLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var programId: Swift.String?
+  @objc public var customerId: Swift.String
+  @objc public var urn: Swift.String?
+  @objc public var kycProfileId: Swift.String?
+  @objc public var fundFlowType: Swift.String
+  @objc public var channelId: Swift.String
+  @objc public var perTxnLimit: Swift.Double
+  @objc public var dailyLimit: Swift.Double
+  @objc public var monthlyLimit: Swift.Double
+  @objc public var yearlyLimit: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, programId: Swift.String?, customerId: Swift.String, urn: Swift.String?, kycProfileId: Swift.String?, fundFlowType: Swift.String, channelId: Swift.String, perTxnLimit: Swift.Double = 0.0, dailyLimit: Swift.Double = 0.0, monthlyLimit: Swift.Double = 0.0, yearlyLimit: Swift.Double = 0.0)
+  #endif
+  @objc deinit
+}
+@objc public class PayUFetchBeneficiaryLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var beneficiaryId: Swift.String
+  @objc public var programId: Swift.Int
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, beneficiaryId: Swift.String, programId: Swift.Int)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWVerifyOTPForResetPINResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var accessToken: Swift.String?
+  @objc public var mobileNumber: Swift.String?
+  @objc public var walletUrn: Swift.String?
+  @objc public var status: Swift.String?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWCreateCardLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var responseDateTime: Swift.String?
+  @objc public var id: Swift.Int
+  @objc public var clientId: Swift.String?
+  @objc public var programId: Swift.String?
+  @objc public var customerId: Swift.String?
+  @objc public var urn: Swift.String?
+  @objc public var kycProfileId: Swift.String?
+  @objc public var fundFlowType: Swift.String?
+  @objc public var channelId: Swift.String?
+  @objc public var perTxnLimit: Swift.String?
+  @objc public var dailyCount: Swift.String?
+  @objc public var dailyLimit: Swift.String?
+  @objc public var monthlyCount: Swift.String?
+  @objc public var monthlyLimit: Swift.String?
+  @objc public var yearlyCount: Swift.String?
+  @objc public var yearlyLimit: Swift.String?
+  @objc public var outstandingBalance: Swift.String?
+  @objc public var status: Swift.Int
+  @objc public var createdDateTime: Swift.String?
+  @objc public var lastModifiedDateTime: Swift.String?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWFetchWalletLimitResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var descriptionLimit: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var bankId: Swift.Int
+  @objc public var responseDateTime: Swift.String?
+  @objc public var limits: [PayUOLWParamKit.OLWWalletLimitDetail]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWWalletLimitDetail : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var programSubWalletId: Swift.String?
+  @objc public var subwalletName: Swift.String?
+  @objc public var program: PayUOLWParamKit.OLWWalletLimitProgram?
+  @objc public var wallet: PayUOLWParamKit.OLWWalletLimitWallet?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class OLWWalletLimitProgram : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var kycProfile: Swift.Int
+  @objc public var perTransactionLimit: Swift.Double
+  @objc public var maxWalletBalanceLimit: Swift.Double
+  @objc public var dailyUnloadTransactionCount: Swift.Int
+  @objc public var dailyLoadTransactionCount: Swift.Int
+  @objc public var monthlyUnloadTransactionCount: Swift.Int
+  @objc public var monthlyLoadTransactionCount: Swift.Int
+  @objc public var annualUnloadTransactionCount: Swift.Int
+  @objc public var annualLoadTransactionCount: Swift.Int
+  @objc public var dailyLoadLimit: Swift.Double
+  @objc public var dailyUnloadLimit: Swift.Double
+  @objc public var monthlyLoadLimit: Swift.Double
+  @objc public var monthlyUnloadLimit: Swift.Double
+  @objc public var annualLoadLimit: Swift.Double
+  @objc public var annualUnloadLimit: Swift.Double
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class OLWWalletLimitWallet : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accountNumber: Swift.Int
+  @objc public var kycProfile: Swift.Int
+  @objc public var perTransactionLimit: Swift.Double
+  @objc public var maxWalletBalanceLimit: Swift.Double
+  @objc public var dailyUnloadTransactionCount: Swift.Int
+  @objc public var dailyLoadTransactionCount: Swift.Int
+  @objc public var monthlyUnloadTransactionCount: Swift.Int
+  @objc public var monthlyLoadTransactionCount: Swift.Int
+  @objc public var annualUnloadTransactionCount: Swift.Int
+  @objc public var annualLoadTransactionCount: Swift.Int
+  @objc public var dailyLoadLimit: Swift.Double
+  @objc public var dailyUnloadLimit: Swift.Double
+  @objc public var monthlyLoadLimit: Swift.Double
+  @objc public var monthlyUnloadLimit: Swift.Double
+  @objc public var annualLoadLimit: Swift.Double
+  @objc public var annualUnloadLimit: Swift.Double
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PayUUpdateCardLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var id: Swift.String?
+  @objc public var perTxnLimit: Swift.String?
+  @objc public var dailyLimit: Swift.String?
+  @objc public var monthlyLimit: Swift.String?
+  @objc public var yearlyLimit: Swift.String?
+  @objc public var dailyCount: Swift.String?
+  @objc public var monthlyCount: Swift.String?
+  @objc public var yearlyCount: Swift.String?
+  @objc public var outstandingBalance: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, id: Swift.String? = nil, perTxnLimit: Swift.String? = nil, dailyLimit: Swift.String? = nil, monthlyLimit: Swift.String? = nil, yearlyLimit: Swift.String? = nil, dailyCount: Swift.String? = nil, monthlyCount: Swift.String? = nil, yearlyCount: Swift.String? = nil, outstandingBalance: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
+@objc public class PayUFetchIfscDetailsRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var ifscCode: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, ifscCode: Swift.String?)
+  #endif
+  @objc deinit
+}
+@objc public class PayUResendOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var mobileNumber: Swift.String?
+  @objc public var uuid: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?, uuid: Swift.String?)
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PayUOLWCoreServiceResponse : ObjectiveC.NSObject {
+  @objc public var code: Swift.Int
+  @objc public var message: Swift.String?
+  @objc public var referenceId: Swift.String?
+  @objc public var result: Any?
+  @objc public var jsonResponse: Any?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class OLWW2WFundTransferResponse : PayUOLWParamKit.OLWBaseResponse {
+  @objc public var messageCode: Swift.Int
+  @objc public var clientTxnId: Swift.String?
+  @objc public var clientId: Swift.String?
+  @objc public var responseDateTime: Swift.String?
+  @objc public var accosaTransactionId: Swift.Int
+  @objc public var bankId: Swift.Int
+  @objc public var token: Swift.String?
+  @objc public var transactionAmount: Swift.String?
+  @objc public var senders: [PayUOLWParamKit.OLWW2WFundTransferSender]?
+  @objc public var receivers: [PayUOLWParamKit.OLWW2WFundTransferReceiver]?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+@objc public class OLWVerifyOTPForResetPINRequest : PayUOLWParamKit.PayUOLWBaseRequest {
+  @objc public var otp: Swift.String?
+  @objc public var uuid: Swift.String?
+  @objc public var mobileNumber: Swift.String?
+  @objc public var walletUrn: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, otp: Swift.String?, uuid: Swift.String?, mobileNumber: Swift.String?, walletUrn: Swift.String?)
+  #endif
+  @objc deinit
+}

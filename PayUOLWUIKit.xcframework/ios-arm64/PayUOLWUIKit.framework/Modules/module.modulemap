@@ -1,0 +1,4 @@
+framework module PayUOLWUIKit {
+  header "PayUOLWUIKit-Swift.h"
+  requires objc
+}

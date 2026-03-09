@@ -1,0 +1,255 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWUIKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Combine
+import CommonCrypto
+import DeveloperToolsSupport
+import Foundation
+import OnePayUJSKit
+import PayUAnalyticsKit
+import PayUCrashReporter
+import PayUCustomBrowser
+import PayUDesignLibrary
+import PayUOLWCoreKit
+import PayUOLWParamKit
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@objc public protocol PayUOLWDelegate {
+  @objc func hashGeneration(for param: [Swift.String : Swift.String], completion: @escaping ([Swift.String : Swift.String]) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc func onError(response: PayUOLWParamKit.PayUOLWCoreServiceResponse?)
+  #endif
+  @objc func onSDKClosed()
+}
+
+@_inheritsConvenienceInitializers @objc public class PayUOLWUISdk : ObjectiveC.NSObject {
+  @objc public static func openPayUOLWSDK(parentVC: UIKit.UIViewController, olwParams: PayUOLWParamKit.PayUOLWParams, delegate: any PayUOLWUIKit.PayUOLWDelegate)
+  @objc override dynamic public init()
+  @objc deinit
+}
+
+
+
+
+
+
+
+public enum CloseReason : Swift.CaseIterable {
+  case noLongerUse
+  case securityPrivacy
+  case technicalIssues
+  case others
+  public var displayText: Swift.String {
+    get
+  }
+  public static func == (a: PayUOLWUIKit.CloseReason, b: PayUOLWUIKit.CloseReason) -> Swift.Bool
+  public typealias AllCases = [PayUOLWUIKit.CloseReason]
+  nonisolated public static var allCases: [PayUOLWUIKit.CloseReason] {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+
+
+
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor @preconcurrency public var payuModelName: Swift.String {
+    get
+  }
+}
+
+
+
+
+
+
+
+
+
+
+public protocol HybridCallbackHandler : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onHashRequired(hashData: [Swift.String : Swift.String?])
+  #endif
+  func onClose()
+  func onError(errorJson: Swift.String)
+}
+public struct PayUOLWHybridValues {
+  public struct Error {
+    public static let merchantKeyRequired: Swift.String
+    public static let merchantKeyEmpty: Swift.String
+    public static let merchantLogoRequired: Swift.String
+    public static let merchantLogoNotFound: Swift.String
+    public static let primaryColorRequired: Swift.String
+    public static let primaryColorInvalid: Swift.String
+    public static let customerMobileRequired: Swift.String
+    public static let customerMobileInvalid: Swift.String
+    public static let supportEmailRequired: Swift.String
+    public static let supportEmailInvalid: Swift.String
+    public static let termsURLRequired: Swift.String
+    public static let callbackHandlerNotSet: Swift.String
+    public static let viewControllerNull: Swift.String
+    public static let hashGenerationTimeout: Swift.String
+    public static let hashGenerationFailed: Swift.String
+    public static let jsonParseError: Swift.String
+    public static let sdkInitError: Swift.String
+    public static let parameterValidationError: Swift.String
+    public static let someErrorOccurred: Swift.String
+  }
+  public struct ErrorCode {
+    public static let merchantKeyError: Swift.Int
+    public static let merchantLogoError: Swift.Int
+    public static let primaryColorError: Swift.Int
+    public static let customerMobileError: Swift.Int
+    public static let supportEmailError: Swift.Int
+    public static let termsURLError: Swift.Int
+    public static let parameterValidationError: Swift.Int
+    public static let callbackNotSet: Swift.Int
+    public static let viewControllerNull: Swift.Int
+    public static let hashTimeout: Swift.Int
+    public static let hashFailed: Swift.Int
+    public static let jsonParseError: Swift.Int
+    public static let sdkInitError: Swift.Int
+    public static let genericError: Swift.Int
+    public static let unknownError: Swift.Int
+  }
+  public struct Status {
+    public static let success: Swift.String
+    public static let error: Swift.String
+    public static let cancelled: Swift.String
+  }
+  public struct Patterns {
+    public static let hexColorPattern: Swift.String
+    public static let mobilePattern: Swift.String
+    public static let emailPattern: Swift.String
+  }
+}
+public struct CustomerParamsParser {
+  public struct ValidationResult {
+    public let isValid: Swift.Bool
+    public let errorMessage: Swift.String?
+    public static func success() -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
+    public static func failure(_ message: Swift.String) -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
+  }
+  public struct ParsedParams {
+    public let merchantKey: Swift.String
+    public let isProduction: Swift.Bool
+    public let merchantLogoImage: UIKit.UIImage?
+    public let merchantLogoName: Swift.String?
+    public let primaryColor: Swift.String
+    public let customerMobile: Swift.String
+    public let merchantSupportEmail: Swift.String
+    public let termsAndConditionsURL: Swift.String
+    public let surl: Swift.String?
+    public let furl: Swift.String?
+    public let redirectionURL: Swift.String?
+    public let payUReferenceId: Swift.String
+  }
+  public struct ParserError : Swift.Error {
+    public let message: Swift.String
+    public init(message: Swift.String)
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func convertDictionaryToParams(map: [Swift.String : Any?]) throws -> PayUOLWUIKit.CustomerParamsParser.ParsedParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func validateParams(map: [Swift.String : Any?]) -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
+  #endif
+}
+public struct PayUOLWHybridKeys {
+  public struct CustomerParams {
+    public static let merchantKey: Swift.String
+    public static let isProduction: Swift.String
+    public static let merchantLogoName: Swift.String
+    public static let primaryColor: Swift.String
+    public static let customerMobile: Swift.String
+    public static let merchantSupportEmail: Swift.String
+    public static let termsConditionsURL: Swift.String
+    public static let surl: Swift.String
+    public static let furl: Swift.String
+    public static let redirectionURL: Swift.String
+    public static let payUReferenceId: Swift.String
+  }
+  public struct Hash {
+    public static let hashData: Swift.String
+    public static let hashResult: Swift.String
+    public static let hashString: Swift.String
+    public static let hashType: Swift.String
+  }
+  public struct Callback {
+    public static let status: Swift.String
+    public static let data: Swift.String
+    public static let errorCode: Swift.String
+    public static let errorMessage: Swift.String
+    public static let isTxnInitiated: Swift.String
+  }
+  public struct Methods {
+    public static let openSDK: Swift.String
+    public static let onHashGenerated: Swift.String
+    public static let onHashRequired: Swift.String
+    public static let onSuccess: Swift.String
+    public static let onError: Swift.String
+    public static let onClose: Swift.String
+  }
+  public static let channelName: Swift.String
+}
+public struct CallbackToJSONParser {
+  public static func onError(errorCode: Swift.Int, errorMessage: Swift.String) -> Swift.String
+  public static func onError(errorMessage: Swift.String) -> Swift.String
+  public static func onCancelled(isTxnInitiated: Swift.Bool) -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func formatHashRequest(_ hashData: [Swift.String : Swift.String]) -> [Swift.String : Swift.String?]
+  #endif
+  public static func wrapSuccess(data: Swift.String) -> Swift.String
+}
+@objc public class HybridSDKParser : ObjectiveC.NSObject {
+  public init(viewController: UIKit.UIViewController)
+  public func setCallbackHandler(_ handler: any PayUOLWUIKit.HybridCallbackHandler)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func openPayUOLWSDK(paramsMap: [Swift.String : Any?])
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onHashGenerated(hash: Swift.String, hashName: Swift.String?)
+  #endif
+  @objc deinit
+}
+extension PayUOLWUIKit.HybridSDKParser : PayUOLWUIKit.PayUOLWDelegate {
+  @objc dynamic public func hashGeneration(for param: [Swift.String : Swift.String], completion: @escaping ([Swift.String : Swift.String]) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic public func onError(response: PayUOLWParamKit.PayUOLWCoreServiceResponse?)
+  #endif
+  @objc dynamic public func onSDKClosed()
+}
+
+extension PayUOLWUIKit.CloseReason : Swift.Equatable {}
+extension PayUOLWUIKit.CloseReason : Swift.Hashable {}

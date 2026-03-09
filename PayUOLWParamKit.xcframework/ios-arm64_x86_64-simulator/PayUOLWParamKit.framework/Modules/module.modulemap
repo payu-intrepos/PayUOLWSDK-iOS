@@ -1,0 +1,4 @@
+framework module PayUOLWParamKit {
+  header "PayUOLWParamKit-Swift.h"
+  requires objc
+}

@@ -1,0 +1,130 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWCoreKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import CommonCrypto
+import CryptoKit
+import Foundation
+import PayUAnalyticsKit
+import PayUCrashReporter
+import PayUNetworkReachability
+import PayUOLWParamKit
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class PayUOLWCoreSDK : ObjectiveC.NSObject {
+  @objc public class func doMinKyc(param: PayUOLWParamKit.PayUMinKycRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func createDispute(param: PayUOLWParamKit.PayUCreateDisputeRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchDisputeDetail(param: PayUOLWParamKit.PayUDisputeDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchAllDisputeList(param: PayUOLWParamKit.PayUDisputeListRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func changeWalletStatus(param: PayUOLWParamKit.PayUChangeWalletStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchCustomerDetail(param: PayUOLWParamKit.PayUCustomerDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchCustomerDetailsWithJIT(param: PayUOLWParamKit.PayUCustomerDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchTransactionHistory(param: PayUOLWParamKit.PayUTransactionHistoryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func blockCard(cardInfo: PayUOLWParamKit.OLWBlockUnBlockCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func unBlockCard(param: PayUOLWParamKit.OLWBlockUnBlockCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func updateProfile(param: PayUOLWParamKit.PayUUpdateProfileRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func changeCardChannelStatus(param: PayUOLWParamKit.PayUChangeCardChannelStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func sendMPinOTP(param: PayUOLWParamKit.PayUSendMPinOTPRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func verifyOTPResetPIN(verifyOTPForResetPIN: PayUOLWParamKit.OLWVerifyOTPForResetPINRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func updateCardLevelLimit(param: PayUOLWParamKit.PayUUpdateCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func createCardLevelLimit(param: PayUOLWParamKit.PayUCreateCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchIfscDetails(request: PayUOLWParamKit.PayUFetchIfscDetailsRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchCardDetails(param: PayUOLWParamKit.PayUCardInquiryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchCardLevelLimit(param: PayUOLWParamKit.PayUFetchCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchWalletLevelLimit(param: PayUOLWParamKit.PayUFetchWalletLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func updateWalletLevelLimit(param: PayUOLWParamKit.PayUUpdateWalletLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func resetCardPin(param: PayUOLWParamKit.PayUResetCardPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchMerchantDetails(param: PayUOLWParamKit.PayUMerchantDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchBeneficiaryLimits(param: PayUOLWParamKit.PayUFetchBeneficiaryLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func initiateFullKyc(param: PayUOLWParamKit.PayUInitiateFullKycRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func kycStatus(request: PayUOLWParamKit.OLWKYCStatusAPIRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func transactionStatus(param: PayUOLWParamKit.OLWTransactionStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func setResetMPIN(param: PayUOLWParamKit.PayUSetResetMPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func verifyMPIN(param: PayUOLWParamKit.PayUVerifyMPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func createBeneficiary(param: PayUOLWParamKit.PayUCreateBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func updateBeneficiary(param: PayUOLWParamKit.PayUUpdateBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func deleteBeneficiary(param: PayUOLWParamKit.PayUDeleteBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchBeneficiaryList(param: PayUOLWParamKit.PayUGetBeneficiaryListRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func sendOTP(request: PayUOLWParamKit.PayUSendOTPRequest) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func verifyOTP(request: PayUOLWParamKit.PayUVerifyOTPRequest) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func resendOTP(request: PayUOLWParamKit.PayUResendOTPRequest) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func w2wFundTransfer(param: PayUOLWParamKit.PayUW2WFundTransferRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func w2aIMPSFundTransfer(param: PayUOLWParamKit.PayUW2AFundTransferRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func loadMoney(param: PayUOLWParamKit.PayULoadMoneyRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchPaymentLevelLimits(param: PayUOLWParamKit.PayUPaymentLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func requestPhysicalCard(param: PayUOLWParamKit.PayUPhysicalCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchPinCode(param: PayUOLWParamKit.PayUPinCodeRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func fetchCustomerLimits(param: PayUOLWParamKit.PayUCustomerLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure) async -> PayUOLWParamKit.PayUOLWCoreServiceResponse
+  @objc public class func reset()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc extension PayUOLWCoreKit.PayUOLWCoreSDK {
+  @objc dynamic public class func doMinKyc(param: PayUOLWParamKit.PayUMinKycRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchCustomerDetail(param: PayUOLWParamKit.PayUCustomerDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchCustomerDetailsWithJIT(param: PayUOLWParamKit.PayUCustomerDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchTransactionHistory(param: PayUOLWParamKit.PayUTransactionHistoryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func blockCard(param: PayUOLWParamKit.OLWBlockUnBlockCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func unBlockCard(param: PayUOLWParamKit.OLWBlockUnBlockCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func transactionStatus(param: PayUOLWParamKit.OLWTransactionStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func setResetMPIN(param: PayUOLWParamKit.PayUSetResetMPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func verifyMPIN(param: PayUOLWParamKit.PayUVerifyMPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func createBeneficiary(param: PayUOLWParamKit.PayUCreateBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func updateBeneficiary(param: PayUOLWParamKit.PayUUpdateBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func deleteBeneficiary(param: PayUOLWParamKit.PayUDeleteBeneficiaryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchBeneficiaryList(param: PayUOLWParamKit.PayUGetBeneficiaryListRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func sendOTP(request: PayUOLWParamKit.PayUSendOTPRequest, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func verifyOTP(request: PayUOLWParamKit.PayUVerifyOTPRequest, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func resendOTP(request: PayUOLWParamKit.PayUResendOTPRequest, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func updateProfile(param: PayUOLWParamKit.PayUUpdateProfileRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func changeCardChannelStatus(param: PayUOLWParamKit.PayUChangeCardChannelStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func sendMPinOTP(param: PayUOLWParamKit.PayUSendMPinOTPRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func verifyOTPResetPIN(verifyOTPForResetPIN: PayUOLWParamKit.OLWVerifyOTPForResetPINRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func updateCardLevelLimit(param: PayUOLWParamKit.PayUUpdateCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func createCardLimit(param: PayUOLWParamKit.PayUCreateCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchIfscDetails(request: PayUOLWParamKit.PayUFetchIfscDetailsRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func w2wFundTransfer(param: PayUOLWParamKit.PayUW2WFundTransferRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func w2aIMPSFundTransfer(param: PayUOLWParamKit.PayUW2AFundTransferRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchCardDetails(param: PayUOLWParamKit.PayUCardInquiryRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func resetCardPIN(param: PayUOLWParamKit.PayUResetCardPinRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchCardLevelLimit(param: PayUOLWParamKit.PayUFetchCardLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchWalletLimit(param: PayUOLWParamKit.PayUFetchWalletLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func setUpdateWalletLimit(param: PayUOLWParamKit.PayUUpdateWalletLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func loadMoney(param: PayUOLWParamKit.PayULoadMoneyRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchBeneficiaryLimits(param: PayUOLWParamKit.PayUFetchBeneficiaryLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func initiateFullKyc(param: PayUOLWParamKit.PayUInitiateFullKycRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func kycStatus(request: PayUOLWParamKit.OLWKYCStatusAPIRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchPaymentLevelLimits(param: PayUOLWParamKit.PayUPaymentLevelLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func createServiceRequest(param: PayUOLWParamKit.PayUCreateDisputeRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchDisputeDetail(param: PayUOLWParamKit.PayUDisputeDetailRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchAllDisputeList(param: PayUOLWParamKit.PayUDisputeListRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func changeWalletStatus(param: PayUOLWParamKit.PayUChangeWalletStatusRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func requestPhysicalCard(param: PayUOLWParamKit.PayUPhysicalCardRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchPinCode(param: PayUOLWParamKit.PayUPinCodeRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+  @objc dynamic public class func fetchCustomerLimits(param: PayUOLWParamKit.PayUCustomerLimitRequest, hashGenerationHandler: @escaping PayUOLWCoreKit.PayUOLWHashGenerationClosure, completion: @escaping (PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void)
+}
+@objc public class PayUOLWCoreError : ObjectiveC.NSObject, Foundation.LocalizedError {
+  @objc public var message: Swift.String
+  @objc public var errorCode: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(message: Swift.String?, code: Swift.Int = 1)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public var errorDescription: Swift.String? {
+    @objc get
+  }
+  #endif
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PayUOLWCore : ObjectiveC.NSObject {
+  @objc public class func initialiseCrashReporter()
+  @objc public class func reset()
+  @objc deinit
+}
+public typealias PayUOLWCoreKitCallBack = (_ response: PayUOLWParamKit.PayUOLWCoreServiceResponse) -> Swift.Void
+public typealias PayUOLWCoreKitHashGenerationCompletion = [Swift.String : Swift.String]
+public typealias PayUOLWHashGenerationClosure = (_ param: [Swift.String : Swift.String], _ completion: @escaping ([Swift.String : Swift.String]) -> Swift.Void) -> Swift.Void
