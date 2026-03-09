@@ -32,7 +32,7 @@ let package = Package(
         .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
         .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", from: VERSION_CUSTOM_BROWSER),
         .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", branch: "alpha"),
-        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", from: "alpha"),
+        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", branch: "alpha"),
         
     ],
     targets: [
