@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PayUOLWParamKit-Swift.h</key>
 		<data>
-		JVRh+Tggh+rZ6SHmOdeepCviaGM=
+		JKrfvMR2/Al6BzxMt0JxmwdQO4U=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		40pOlSN4FslWJw5BEBS4aJMqdKw=
+		5vNnrvsHqHnsZ7qY7LtNLhBWnSI=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		urlYLUXEOlsQYQ9sl+O/PpsV/KY=
+		URjEZFB2tR4GU0vxG58uI5IH+7M=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		urlYLUXEOlsQYQ9sl+O/PpsV/KY=
+		URjEZFB2tR4GU0vxG58uI5IH+7M=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		6igxo70/RgFlpY4RcoVmOzXHDnk=
+		5buOrWY4MsiHN9Ml64p02lSGUZk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,21 +47,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hBSHIKhhepkM98MULNngAXrnBcYXQ74DhK4EsRtVFwc=
+			MJpxMEgYGTB5A8wrJk5k9hf0Ql844lCPIbcPPPM5LHI=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e71+uzlyrBVnbfL/po/sBohRiKYyhVbN4V3CtJyP/Dw=
+			su0mpoTSW8hv9hFKQGrKeOJkzvD9ybFXCQO2rHEhtak=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i9ebM91p7FYKpSs3pRKQ9tHL5AK8A1lgUFc3FTgC0ns=
+			prARs08KlaMo5p514E6Owd9YNkRuOhbzhJW2Y2iPxI8=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -75,14 +75,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i9ebM91p7FYKpSs3pRKQ9tHL5AK8A1lgUFc3FTgC0ns=
+			prARs08KlaMo5p514E6Owd9YNkRuOhbzhJW2Y2iPxI8=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B0zLaXfI+O0shF7pJCaz9AhVbuaP51DD2t6BMWuPFUk=
+			UAhczpgRbGGCcbiegkXiZwp8f3fTZxwCZclPVf7/RL4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

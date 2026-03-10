@@ -1628,12 +1628,12 @@ SWIFT_CLASS("_TtC15PayUOLWParamKit13PayUOLWParams")
 @property (nonatomic, copy) NSString * _Nullable primaryColor;
 @property (nonatomic, copy) NSString * _Nonnull customerMobile;
 @property (nonatomic, copy) NSString * _Nullable termsAndConditionsURL;
-@property (nonatomic, copy) NSString * _Nullable merchantSupportEmail;
+@property (nonatomic, copy) NSString * _Nonnull merchantSupportEmail;
 @property (nonatomic, copy) NSString * _Nullable surl;
 @property (nonatomic, copy) NSString * _Nullable furl;
 @property (nonatomic, copy) NSString * _Nullable kycRedirectionUrl;
 @property (nonatomic, copy) NSString * _Nonnull payUReferenceId;
-- (nonnull instancetype)initWithMerchantKey:(NSString * _Nonnull)merchantKey merchantLogo:(NSString * _Nullable)merchantLogo primaryColor:(NSString * _Nullable)primaryColor customerMobile:(NSString * _Nonnull)customerMobile termsAndConditionsURL:(NSString * _Nullable)termsAndConditionsURL merchantSupportEmail:(NSString * _Nullable)merchantSupportEmail isProd:(BOOL)isProd kycRedirectionUrl:(NSString * _Nullable)kycRedirectionUrl payUReferenceId:(NSString * _Nonnull)payUReferenceId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMerchantKey:(NSString * _Nonnull)merchantKey merchantLogo:(NSString * _Nullable)merchantLogo primaryColor:(NSString * _Nullable)primaryColor customerMobile:(NSString * _Nonnull)customerMobile termsAndConditionsURL:(NSString * _Nullable)termsAndConditionsURL merchantSupportEmail:(NSString * _Nonnull)merchantSupportEmail isProd:(BOOL)isProd kycRedirectionUrl:(NSString * _Nullable)kycRedirectionUrl payUReferenceId:(NSString * _Nonnull)payUReferenceId OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3532,12 +3532,12 @@ SWIFT_CLASS("_TtC15PayUOLWParamKit13PayUOLWParams")
 @property (nonatomic, copy) NSString * _Nullable primaryColor;
 @property (nonatomic, copy) NSString * _Nonnull customerMobile;
 @property (nonatomic, copy) NSString * _Nullable termsAndConditionsURL;
-@property (nonatomic, copy) NSString * _Nullable merchantSupportEmail;
+@property (nonatomic, copy) NSString * _Nonnull merchantSupportEmail;
 @property (nonatomic, copy) NSString * _Nullable surl;
 @property (nonatomic, copy) NSString * _Nullable furl;
 @property (nonatomic, copy) NSString * _Nullable kycRedirectionUrl;
 @property (nonatomic, copy) NSString * _Nonnull payUReferenceId;
-- (nonnull instancetype)initWithMerchantKey:(NSString * _Nonnull)merchantKey merchantLogo:(NSString * _Nullable)merchantLogo primaryColor:(NSString * _Nullable)primaryColor customerMobile:(NSString * _Nonnull)customerMobile termsAndConditionsURL:(NSString * _Nullable)termsAndConditionsURL merchantSupportEmail:(NSString * _Nullable)merchantSupportEmail isProd:(BOOL)isProd kycRedirectionUrl:(NSString * _Nullable)kycRedirectionUrl payUReferenceId:(NSString * _Nonnull)payUReferenceId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMerchantKey:(NSString * _Nonnull)merchantKey merchantLogo:(NSString * _Nullable)merchantLogo primaryColor:(NSString * _Nullable)primaryColor customerMobile:(NSString * _Nonnull)customerMobile termsAndConditionsURL:(NSString * _Nullable)termsAndConditionsURL merchantSupportEmail:(NSString * _Nonnull)merchantSupportEmail isProd:(BOOL)isProd kycRedirectionUrl:(NSString * _Nullable)kycRedirectionUrl payUReferenceId:(NSString * _Nonnull)payUReferenceId OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

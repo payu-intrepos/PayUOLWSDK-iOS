@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PayUOLWParamKit-Swift.h</key>
 		<data>
-		6/T1T4fXQTABTAKYoK4Yh7Fteno=
+		4h78hrPobOlnPq9x6yCbpYKxawg=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		40pOlSN4FslWJw5BEBS4aJMqdKw=
+		5vNnrvsHqHnsZ7qY7LtNLhBWnSI=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		WflBEaF80bp0H44m6iisiDUDLuE=
+		2DYzEM4cBg+6rjVPkMUMRMGV7As=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		WflBEaF80bp0H44m6iisiDUDLuE=
+		2DYzEM4cBg+6rjVPkMUMRMGV7As=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+Zsu/iAPsO09G3CJnVlJApPL3xQ=
+		uJqVHjQ4FTlz2QWfme1i3xkULNs=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		40pOlSN4FslWJw5BEBS4aJMqdKw=
+		5vNnrvsHqHnsZ7qY7LtNLhBWnSI=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2rhjuM+EWTlv9nZ62FOEYHWOhXw=
+		bP+JYodBWsld0E0VnpJq/MWa+cA=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2rhjuM+EWTlv9nZ62FOEYHWOhXw=
+		bP+JYodBWsld0E0VnpJq/MWa+cA=
 		</data>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		nh/v8zevdEMD6tCEzC5R+7cSPMQ=
+		wfFFW1fPHwTyC1+WiRhsJoI/+s0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,21 +67,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kZbnmm4UCWspchv5sV34Ci0yJveS1uYMTCBcKY3ny28=
+			PsYtBVQpSUWXBJpoTpW6Q7Sgn3LoNK2aWDTzN/9cvHw=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e71+uzlyrBVnbfL/po/sBohRiKYyhVbN4V3CtJyP/Dw=
+			su0mpoTSW8hv9hFKQGrKeOJkzvD9ybFXCQO2rHEhtak=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IslGWtpZyY/2fngCCms/JAMm5pCdVZvoXTUnGwwYiAs=
+			xe9E6vildvb9I9LsmigMbAraA0UOaeYVD6I0hrPz8ak=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -95,28 +95,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IslGWtpZyY/2fngCCms/JAMm5pCdVZvoXTUnGwwYiAs=
+			xe9E6vildvb9I9LsmigMbAraA0UOaeYVD6I0hrPz8ak=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xWVP3+JB+CdQxRQ0ODCI7KRPysgBkzfvoFjE8Z0+YNE=
+			s92/uMLKvESY0Vpu2H+7FQC3JjK9DiEudtjajLTubiw=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e71+uzlyrBVnbfL/po/sBohRiKYyhVbN4V3CtJyP/Dw=
+			su0mpoTSW8hv9hFKQGrKeOJkzvD9ybFXCQO2rHEhtak=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dil3qAtTv/6HJcjM0AZJEAQRuK/9xBWSAvCO5/K/POI=
+			g043IHQq3875/Ilbe5xp+8UNQ+ioDnAcYhGk4NrCSKk=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -130,14 +130,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dil3qAtTv/6HJcjM0AZJEAQRuK/9xBWSAvCO5/K/POI=
+			g043IHQq3875/Ilbe5xp+8UNQ+ioDnAcYhGk4NrCSKk=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWParamKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZlFWTBDfc0O9Sg4wpSK1XIg7xH5QA0mt93TJr7n9JGQ=
+			lx9Ut+GtwRE2tVWZbguFVEL9z3viDHY6ej85PiDHMZ8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

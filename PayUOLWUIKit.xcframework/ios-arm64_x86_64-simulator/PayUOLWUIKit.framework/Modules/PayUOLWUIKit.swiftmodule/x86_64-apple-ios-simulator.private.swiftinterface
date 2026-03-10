@@ -106,6 +106,8 @@ public protocol HybridCallbackHandler : AnyObject {
 }
 public struct PayUOLWHybridValues {
   public struct Error {
+    public static let referenceKeyRequired: Swift.String
+    public static let referenceKeyEmpty: Swift.String
     public static let merchantKeyRequired: Swift.String
     public static let merchantKeyEmpty: Swift.String
     public static let merchantLogoRequired: Swift.String
@@ -161,26 +163,12 @@ public struct CustomerParamsParser {
     public static func success() -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
     public static func failure(_ message: Swift.String) -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
   }
-  public struct ParsedParams {
-    public let merchantKey: Swift.String
-    public let isProduction: Swift.Bool
-    public let merchantLogoImage: UIKit.UIImage?
-    public let merchantLogoName: Swift.String?
-    public let primaryColor: Swift.String
-    public let customerMobile: Swift.String
-    public let merchantSupportEmail: Swift.String
-    public let termsAndConditionsURL: Swift.String
-    public let surl: Swift.String?
-    public let furl: Swift.String?
-    public let redirectionURL: Swift.String?
-    public let payUReferenceId: Swift.String
-  }
   public struct ParserError : Swift.Error {
     public let message: Swift.String
     public init(message: Swift.String)
   }
   #if compiler(>=5.3) && $NonescapableTypes
-  public static func convertDictionaryToParams(map: [Swift.String : Any?]) throws -> PayUOLWUIKit.CustomerParamsParser.ParsedParams
+  public static func convertDictionaryToParams(map: [Swift.String : Any?]) throws -> PayUOLWParamKit.PayUOLWParams
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public static func validateParams(map: [Swift.String : Any?]) -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
@@ -195,9 +183,7 @@ public struct PayUOLWHybridKeys {
     public static let customerMobile: Swift.String
     public static let merchantSupportEmail: Swift.String
     public static let termsConditionsURL: Swift.String
-    public static let surl: Swift.String
-    public static let furl: Swift.String
-    public static let redirectionURL: Swift.String
+    public static let kycRedirectionUrl: Swift.String
     public static let payUReferenceId: Swift.String
   }
   public struct Hash {

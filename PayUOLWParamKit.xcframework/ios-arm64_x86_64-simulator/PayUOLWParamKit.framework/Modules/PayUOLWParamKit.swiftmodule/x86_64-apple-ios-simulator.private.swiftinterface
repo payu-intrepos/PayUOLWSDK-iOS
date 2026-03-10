@@ -1286,13 +1286,13 @@ import _SwiftConcurrencyShims
   @objc public var primaryColor: Swift.String?
   @objc public var customerMobile: Swift.String
   @objc public var termsAndConditionsURL: Swift.String?
-  @objc public var merchantSupportEmail: Swift.String?
+  @objc public var merchantSupportEmail: Swift.String
   @objc public var surl: Swift.String?
   @objc public var furl: Swift.String?
   @objc public var kycRedirectionUrl: Swift.String?
   @objc public var payUReferenceId: Swift.String
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc public init(merchantKey: Swift.String, merchantLogo: Swift.String?, primaryColor: Swift.String?, customerMobile: Swift.String, termsAndConditionsURL: Swift.String?, merchantSupportEmail: Swift.String?, isProd: Swift.Bool = true, kycRedirectionUrl: Swift.String?, payUReferenceId: Swift.String)
+  @objc public init(merchantKey: Swift.String, merchantLogo: Swift.String?, primaryColor: Swift.String?, customerMobile: Swift.String, termsAndConditionsURL: Swift.String?, merchantSupportEmail: Swift.String, isProd: Swift.Bool = true, kycRedirectionUrl: Swift.String?, payUReferenceId: Swift.String)
   #endif
   @objc deinit
 }

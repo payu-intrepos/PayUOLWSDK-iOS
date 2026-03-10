@@ -104544,25 +104544,16 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Var",
             "usr": "c:@M@PayUOLWParamKit@objc(cs)PayUOLWParams(py)merchantSupportEmail",
-            "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSSgvp",
+            "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSvp",
             "moduleName": "PayUOLWParamKit",
             "declAttributes": [
-              "HasInitialValue",
               "HasStorage",
               "AccessControl",
               "ObjC"
@@ -104576,22 +104567,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@PayUOLWParamKit@objc(cs)PayUOLWParams(im)merchantSupportEmail",
-                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSSgvg",
+                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSvg",
                 "moduleName": "PayUOLWParamKit",
                 "implicit": true,
                 "declAttributes": [
@@ -104611,22 +104594,14 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@PayUOLWParamKit@objc(cs)PayUOLWParams(im)setMerchantSupportEmail:",
-                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSSgvs",
+                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSvs",
                 "moduleName": "PayUOLWParamKit",
                 "implicit": true,
                 "declAttributes": [
@@ -104646,8 +104621,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSSgvM",
-                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSSgvM",
+                "usr": "s:15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSvM",
+                "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC20merchantSupportEmailSSvM",
                 "moduleName": "PayUOLWParamKit",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -105164,17 +105139,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -105206,7 +105173,7 @@
             ],
             "declKind": "Constructor",
             "usr": "c:@M@PayUOLWParamKit@objc(cs)PayUOLWParams(im)initWithMerchantKey:merchantLogo:primaryColor:customerMobile:termsAndConditionsURL:merchantSupportEmail:isProd:kycRedirectionUrl:payUReferenceId:",
-            "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC11merchantKey0E4Logo12primaryColor14customerMobile21termsAndConditionsURL0E12SupportEmail6isProd17kycRedirectionUrl15payUReferenceIdACSS_SSSgAMSSA2MSbAMSStcfc",
+            "mangledName": "$s15PayUOLWParamKit0A10UOLWParamsC11merchantKey0E4Logo12primaryColor14customerMobile21termsAndConditionsURL0E12SupportEmail6isProd17kycRedirectionUrl15payUReferenceIdACSS_SSSgAMSSAMSSSbAMSStcfc",
             "moduleName": "PayUOLWParamKit",
             "objc_name": "initWithMerchantKey:merchantLogo:primaryColor:customerMobile:termsAndConditionsURL:merchantSupportEmail:isProd:kycRedirectionUrl:payUReferenceId:",
             "declAttributes": [
@@ -127588,42 +127555,42 @@
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "BooleanLiteral",
-      "offset": 884,
+      "offset": 882,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "StringLiteral",
-      "offset": 1637,
+      "offset": 1635,
       "length": 12,
       "value": "\"hashString\""
     },
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "StringLiteral",
-      "offset": 1689,
+      "offset": 1687,
       "length": 10,
       "value": "\"hashType\""
     },
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "StringLiteral",
-      "offset": 1739,
+      "offset": 1737,
       "length": 10,
       "value": "\"hashName\""
     },
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "StringLiteral",
-      "offset": 1789,
+      "offset": 1787,
       "length": 10,
       "value": "\"postSalt\""
     },
     {
       "filePath": "\/Users\/shubham.garg\/Documents\/PayU\/olw-sdk-ios\/SDKs\/PayUOLWParamKit\/PayUOLWParamKit\/Models\/PayUOLWParams.swift",
       "kind": "BooleanLiteral",
-      "offset": 2073,
+      "offset": 2071,
       "length": 4,
       "value": "true"
     },
