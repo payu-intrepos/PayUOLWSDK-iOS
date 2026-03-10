@@ -20,7 +20,7 @@ let package = Package(
             targets: ["PayUIndia-OLWCore-SDKTarget"]),
         .library(
             name: "PayUIndia-OLWUI-SDK",
-            targets: ["PayUIndia-OLWUI-SDKTarget"]),
+            targets: ["PayUIndia-OLWUI-SDKTarget"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -29,11 +29,14 @@ let package = Package(
         .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
         .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", branch: "alpha"),
         .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", branch: "alpha"),
-        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", branch: "alpha"),
+        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", branch: "alpha")
         
     ],
     targets: [
-        
+        .binaryTarget(name: "PayUOLWCoreKit", path: "./PayUOLWCoreKit.xcframework"),
+        .binaryTarget(name: "PayUOLWParamKit", path: "./PayUOLWParamKit.xcframework"),
+        .binaryTarget(name: "PayUOLWUIKit", path: "./PayUOLWUIKit.xcframework"),
+
         .target(
             name: "PayUIndia-OLWUI-SDKTarget",
             dependencies: [
@@ -45,7 +48,6 @@ let package = Package(
             ],
             path: "PayUIndia-OLWUI-SDKWrapper"
         ),
-        
         .target(
             name: "PayUIndia-OLWCore-SDKTarget",
             dependencies: [
@@ -56,10 +58,6 @@ let package = Package(
                 "PayUOLWParamKit"
             ],
             path: "PayUIndia-OLWCore-SDKWrapper"
-        ),
-        
-        .binaryTarget(name: "PayUOLWCoreKit", path: "./PayUOLWCoreKit.xcframework"),
-        .binaryTarget(name: "PayUOLWParamKit", path: "./PayUOLWParamKit.xcframework"),
-        .binaryTarget(name: "PayUOLWUIKit", path: "./PayUOLWUIKit.xcframework"),
+        )
     ]
 )
