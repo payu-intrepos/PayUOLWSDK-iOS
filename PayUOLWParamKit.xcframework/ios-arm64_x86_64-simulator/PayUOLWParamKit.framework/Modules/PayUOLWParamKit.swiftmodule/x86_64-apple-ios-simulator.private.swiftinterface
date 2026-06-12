@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWParamKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Foundation
 import Swift
 import _Concurrency
@@ -1136,8 +1136,9 @@ import _SwiftConcurrencyShims
   @objc public var dailyUnloadLimit: Swift.Double
   @objc public var monthlyUnloadLimit: Swift.Double
   @objc public var annualUnloadLimit: Swift.Double
+  @objc public var annualLoadLimit: Swift.Double
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc public init(accountNumber: Swift.String?, perTransactionLimit: Swift.Double, dailyUnloadLimit: Swift.Double, monthlyUnloadLimit: Swift.Double, annualUnloadLimit: Swift.Double)
+  @objc public init(accountNumber: Swift.String?, perTransactionLimit: Swift.Double, dailyUnloadLimit: Swift.Double, monthlyUnloadLimit: Swift.Double, annualUnloadLimit: Swift.Double, annualLoadLimit: Swift.Double)
   #endif
   @objc deinit
 }
@@ -1294,6 +1295,9 @@ import _SwiftConcurrencyShims
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(merchantKey: Swift.String, merchantLogo: Swift.String?, primaryColor: Swift.String?, customerMobile: Swift.String, termsAndConditionsURL: Swift.String?, merchantSupportEmail: Swift.String, isProd: Swift.Bool = true, kycRedirectionUrl: Swift.String?, payUReferenceId: Swift.String)
   #endif
+  @objc override dynamic open var description: Swift.String {
+    @objc get
+  }
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class PayUOLWParamHashConstants : ObjectiveC.NSObject {

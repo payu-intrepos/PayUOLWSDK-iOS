@@ -6,19 +6,19 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Z24Kjh6uiWgcsuAsMRGGEiHewjI=
+		TCBh6LBXC3QQi4EaVLK+6/0A4w4=
 		</data>
 		<key>Frameworks/PayUCommonUI.framework/Assets.car</key>
 		<data>
-		TwHQBggBFzRPniwFMNCV0vATA28=
+		O3ajOmu/DPjh3d8xyLof3Uz3fuk=
 		</data>
 		<key>Frameworks/PayUCommonUI.framework/Info.plist</key>
 		<data>
-		BOrdTDRU8+XneK/r3S+EaQIcrF0=
+		7FgCb/VwzaA+VrlL6Sao0PqNuB0=
 		</data>
 		<key>Frameworks/PayUCommonUI.framework/PayUCommonUI</key>
 		<data>
-		5l1WCfHVKSyOPimlocqzOvOBjCE=
+		7CoaClLlB8f4tAfuVdbcJurd5ew=
 		</data>
 		<key>Frameworks/PayUCommonUI.framework/PayUCustomOverlay.nib</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Frameworks/PayUCommonUI.framework/_CodeSignature/CodeResources</key>
 		<data>
-		IVHrWE2DRpHExeQ84cK2leiRU00=
+		uaYHrHEt8YfamQZd0FwGVWYt96c=
 		</data>
 		<key>Frameworks/PayUCustomBrowser.framework/Assets.car</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Frameworks/PayUCustomBrowser.framework/PayUCustomBrowser</key>
 		<data>
-		i+8Z48wk7yFAd0ddIEnwEASbQrE=
+		3cR6/e+j70wFhNxS7/rLBk3PgOg=
 		</data>
 		<key>Frameworks/PayUCustomBrowser.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -102,31 +102,31 @@
 		</data>
 		<key>Headers/PayUOLWUIKit-Swift.h</key>
 		<data>
-		V8Rq1EDKXqmqMFxhmetX7MYTVGg=
+		0oRULj38Xgl8+qXimUxLm8Br2/Q=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		84Gy4WE1HXo1NdD8xXh3VHVGHbc=
+		Ba0+SWxgF5hqJAKvUXE0stUsmgY=
 		</data>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		LpLeUGzvzo3eiRYA9YySNCgMivw=
+		iQ4oenIl3DwOdt5hKoZwMHEtOlU=
 		</data>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		LsXqQPaETumTOrsTg9YtyEtT+6M=
+		JLvxXFnuic1LiraKmSmg/i3EaxM=
 		</data>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		PM+KZjRC57LFGlUUWTY77TmDcIo=
+		M+8TMX9dI6fBCXpMw2q3//NlhZU=
 		</data>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		LsXqQPaETumTOrsTg9YtyEtT+6M=
+		JLvxXFnuic1LiraKmSmg/i3EaxM=
 		</data>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		yCZOpRKONQRECIPJJMfmiUx9buc=
+		Q/WcGSYhrknSaeYlVPIvERJHkMk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -143,28 +143,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2EsBGHbW6gCV3dmpPcvr07GCZ0q4NVYGcYjYWpJK+RM=
+			Yuu21PxViTuWUkUdvAa73zBNufR3e85mq84qBCsg1fs=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCommonUI.framework/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5JKlJ0rkwuUyPOPr87HNDs7UJSDwdTP0sVShm3QDOgw=
+			R3v7OWb5pqVT3Hk9290j+T+HaV6aLo984N0F04KY7m8=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCommonUI.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dfV+gBaYt3HAzlUGRE/Fg3LO49/kYC6MyB/gLvkFpYY=
+			HFYG1nuC/K2Yv+IZUPujYuE0Bpj6yVKMOlQbSWnjeEw=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCommonUI.framework/PayUCommonUI</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			joTEOkEvKQp/YxomU9NqYP5+3w0tZpDPL0ccqqEWSJ4=
+			Lw3Om72SBbOO9Yg7w66DN3qJK2FXqImblttyNdqynQk=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCommonUI.framework/PayUCustomOverlay.nib</key>
@@ -220,7 +220,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cbHAAFRVDGRMEETMh8l05FD2fmKQguuCOsZAl1faOaA=
+			MheYTdMhlD14Hnh+OujYLdY34SMppJfIOvYtsoiUfgM=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCustomBrowser.framework/Assets.car</key>
@@ -290,7 +290,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NouU+a9gqjtyfwHDEXKq6b0EsuW0nfEgAqNkIOHxqvk=
+			0tnxXgTF0zAI6i5qLRJUhAS/nakUWwFjWtFq3hrnuwE=
 			</data>
 		</dict>
 		<key>Frameworks/PayUCustomBrowser.framework/PrivacyInfo.xcprivacy</key>
@@ -311,42 +311,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RO+LU9PcqojbP5aI3m8WVYUEGudK5UwNrFJiqabHNeU=
+			6pF51PT6gMtZlA6feEUUjVVSH80B9/GqWPYHSjWM8ys=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L4oWUPr/bUDSNpNzMGlabCA2CtKRZoepwEFK8+PvkAs=
+			obme3+QO3crM5/ThZ2oKlViNA1o+OGC0woEd5Uq1ii4=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EVBNX4r4K7qDBsh+lELmcwLhq+5AJcSi+WgkzDGdrec=
+			LlSAc3yhFKgllyY+7fSzFj7HphsqQsSO71jZ+9KtZl0=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f/DYuI2A5g0GNNP8XbA99G33u903fBJ7kYW9k5RYWwE=
+			fDcOligu0nAeWUNYrLd5JrBBariTBIjnFRkEm9o8In0=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EVBNX4r4K7qDBsh+lELmcwLhq+5AJcSi+WgkzDGdrec=
+			LlSAc3yhFKgllyY+7fSzFj7HphsqQsSO71jZ+9KtZl0=
 			</data>
 		</dict>
 		<key>Modules/PayUOLWUIKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NLT+ajeAvzAGlw0A9MOSEA4iPuh+neRguvGJ6PqNa3Y=
+			lDeBLLZk6h7QElAklLI5NZOerj2Jecx1MRed0xcZnkg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
