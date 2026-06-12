@@ -50,7 +50,7 @@ podTrunkPush() {
 }
 
 podName="PayUIndia-OLWCore-SDK"
-podVersion="1.0.0.alpha.2"
+podVersion="1.0.0.alpha.4"
 
 podSpec="${podName}.podspec"
 tag="${podVersion}"
