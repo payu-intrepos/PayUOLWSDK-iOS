@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform            = :ios , "15.0"
   s.vendored_frameworks = 'PayUOLWUIKit.xcframework'
   s.dependency            'PayUIndia-OLWCore-SDK', '1.0.0.alpha.4'
-  s.dependency            'PayUIndia-Custom-Browser','~> 11.3'
+  s.dependency            'PayUIndia-Custom-Browser', '11.3.1.alpha.1'
   s.dependency            'PayUIndia-DL-SDK', '1.0.0.alpha.1'
   s.dependency            'PayUIndia-PPI-SDK', '1.2.0.alpha.2'
 end
