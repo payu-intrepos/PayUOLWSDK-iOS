@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'PayUOLWCoreKit.xcframework'
   s.dependency            'PayUIndia-CrashReporter', '~> 4.0'
   s.dependency            'PayUIndia-NetworkReachability', '~> 2.1'
-  s.dependency            'PayUIndia-Analytics', '~> 4.1'
+  s.dependency            'PayUIndia-Analytics', '4.1.0.alpha.1'
   s.dependency            'PayUIndia-OLWParams-SDK', '1.0.0.alpha.4'
 end
