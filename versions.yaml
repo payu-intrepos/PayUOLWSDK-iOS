@@ -1,0 +1,89 @@
+# Single source of truth for OLW SDK releases (CocoaPods + SPM).
+# Edit this file, then run: ruby scripts/release/sync-versions.rb
+# Schema: see docs/RELEASE_AUTOMATION.md (metadata, internal_pods, cocoapods_external, spm, release, preflight)
+
+metadata:
+  # CocoaPods / git source for all internal pods in this monorepo
+  git_source_url: "https://github.com/payu-intrepos/PayUOLWSDK-iOS.git"
+
+# Semver strings for each pod published from this repo (tags must match these versions).
+internal_pods:
+  # Bumped past existing git tags on origin (alpha.6) so new tags + trunk can publish.
+  PayUIndia-OLWParams-SDK: "1.0.0.alpha.7"
+  PayUIndia-OLWCore-SDK: "1.0.0.alpha.7"
+  PayUIndia-OLWUI-SDK: "1.0.0.alpha.7"
+
+# Third-party (or other repo) CocoaPods pins. Use exact strings as in .podspec (e.g. "~> 4.0").
+# Cross-links between internal pods are filled from internal_pods (Core -> Params, UI -> Core).
+cocoapods_external:
+  PayUIndia-CrashReporter: "~> 4.0"
+  PayUIndia-NetworkReachability: "~> 2.1"
+  PayUIndia-Analytics: "4.1.0.alpha.1"
+  PayUIndia-Custom-Browser: "11.3.1.alpha.1"
+  PayUIndia-DL-SDK: "1.0.0.alpha.1"
+  PayUIndia-PPI-SDK: "1.2.0.alpha.3"
+
+# SPM pins (must stay internally consistent — SwiftPM forbids mixing branch + revision for the same URL).
+# Alpha train: use kind: branch for packages that PayUIndia-PPI-SDK also references by branch (see docs).
+# Stable: use kind: from / exact. Commit Package.resolved after `swift package resolve` for reproducible builds.
+spm:
+  packages:
+    PayUIndia-NetworkReachability:
+      url: "https://github.com/payu-intrepos/PayUNetworkReachability-iOS.git"
+      pin:
+        kind: from
+        version: "2.1.1"
+    # Branch pin aligns with PayUIndia-PPI-SDK (same package cannot mix branch + revision in SPM).
+    PayUIndia-Analytics:
+      url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git"
+      pin:
+        kind: branch
+        branch: alpha
+    PayUIndia-CrashReporter:
+      url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git"
+      pin:
+        kind: from
+        version: "4.0.3"
+    PayUIndia-Custom-Browser:
+      url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git"
+      pin:
+        kind: branch
+        branch: alpha
+    PayUIndia-DL-SDK:
+      url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git"
+      pin:
+        kind: branch
+        branch: alpha
+    PayUIndia-PPI-SDK:
+      url: "https://github.com/payu-intrepos/PPIManageriOS.git"
+      pin:
+        kind: branch
+        branch: alpha
+
+# Release tooling: trunk push order (dependencies first) + artifact names for sync-artifacts.sh
+release:
+  git_author:
+    name: "PayU Mobile App"
+    email: "payumoneyapp@payumoney.com"
+  trunk_push_order:
+    - PayUIndia-OLWParams-SDK
+    - PayUIndia-OLWCore-SDK
+    - PayUIndia-OLWUI-SDK
+  vendored_xcframeworks:
+    - PayUOLWParamKit.xcframework
+    - PayUOLWCoreKit.xcframework
+    - PayUOLWUIKit.xcframework
+
+# Preflight: optional hints for scripts/release/preflight.rb
+preflight:
+  git_tag_discovery:
+    - label: PayUIndia-Analytics
+      repo_url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git"
+    - label: PayUIndia-PPI-SDK
+      repo_url: "https://github.com/payu-intrepos/PPIManageriOS.git"
+    - label: PayUIndia-CrashReporter
+      repo_url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git"
+  pod_spec_cat:
+    - PayUIndia-PPI-SDK
+    - PayUIndia-Analytics
+    - PayUIndia-OLWCore-SDK

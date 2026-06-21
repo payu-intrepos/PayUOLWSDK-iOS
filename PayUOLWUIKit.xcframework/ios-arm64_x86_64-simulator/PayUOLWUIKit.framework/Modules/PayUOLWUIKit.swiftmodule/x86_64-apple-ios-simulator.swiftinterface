@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
-// swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWUIKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWUIKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
 import Combine
 import CommonCrypto
 import DeveloperToolsSupport
@@ -44,9 +44,7 @@ import _WebKit_SwiftUI
 
 @objc public protocol PayUOLWDelegate {
   @objc func hashGeneration(for param: [Swift.String : Swift.String], completion: @escaping ([Swift.String : Swift.String]) -> Swift.Void)
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc func onError(response: PayUOLWParamKit.PayUOLWCoreServiceResponse?)
-  #endif
   @objc func onSDKClosed()
 }
 
@@ -99,9 +97,7 @@ extension UIKit.UIDevice {
 
 
 public protocol HybridCallbackHandler : AnyObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   func onHashRequired(hashData: [Swift.String : Swift.String?])
-  #endif
   func onClose()
   func onError(errorJson: Swift.String)
 }
@@ -168,12 +164,8 @@ public struct CustomerParamsParser {
     public let message: Swift.String
     public init(message: Swift.String)
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func convertDictionaryToParams(map: [Swift.String : Any?]) throws -> PayUOLWParamKit.PayUOLWParams
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func validateParams(map: [Swift.String : Any?]) -> PayUOLWUIKit.CustomerParamsParser.ValidationResult
-  #endif
 }
 public struct PayUOLWHybridKeys {
   public struct CustomerParams {
@@ -214,27 +206,19 @@ public struct CallbackToJSONParser {
   public static func onError(errorCode: Swift.Int, errorMessage: Swift.String) -> Swift.String
   public static func onError(errorMessage: Swift.String) -> Swift.String
   public static func onCancelled(isTxnInitiated: Swift.Bool) -> Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func formatHashRequest(_ hashData: [Swift.String : Swift.String]) -> [Swift.String : Swift.String?]
-  #endif
   public static func wrapSuccess(data: Swift.String) -> Swift.String
 }
 @objc public class HybridSDKParser : ObjectiveC.NSObject {
   public init(viewController: UIKit.UIViewController)
   public func setCallbackHandler(_ handler: any PayUOLWUIKit.HybridCallbackHandler)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func openPayUOLWSDK(paramsMap: [Swift.String : Any?])
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func onHashGenerated(hash: Swift.String, hashName: Swift.String?)
-  #endif
   @objc deinit
 }
 extension PayUOLWUIKit.HybridSDKParser : PayUOLWUIKit.PayUOLWDelegate {
   @objc dynamic public func hashGeneration(for param: [Swift.String : Swift.String], completion: @escaping ([Swift.String : Swift.String]) -> Swift.Void)
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func onError(response: PayUOLWParamKit.PayUOLWCoreServiceResponse?)
-  #endif
   @objc dynamic public func onSDKClosed()
 }
 

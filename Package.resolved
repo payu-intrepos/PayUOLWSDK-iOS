@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PayUIndia-Custom-Browser",
+        "repositoryURL": "https://github.com/payu-intrepos/iOS-Custom-Browser.git",
+        "state": {
+          "branch": "alpha",
+          "revision": "63080bf29b0f661dcd92ee07ab9abaa4b9b0dfc7",
+          "version": null
+        }
+      },
+      {
+        "package": "PayUIndia-Analytics",
+        "repositoryURL": "https://github.com/payu-intrepos/PayUAnalytics-iOS.git",
+        "state": {
+          "branch": "alpha",
+          "revision": "1d0f4be5cfcdd026da04f3c0c28f5ecbd49e3e45",
+          "version": null
+        }
+      },
+      {
+        "package": "PayUIndia-CommonUI",
+        "repositoryURL": "https://github.com/payu-intrepos/PayUCommonUI-iOS",
+        "state": {
+          "branch": "alpha",
+          "revision": "b763e1186a462a41c2e12ad8c213f93a9d27c2bc",
+          "version": null
+        }
+      },
+      {
+        "package": "PayUIndia-CrashReporter",
+        "repositoryURL": "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git",
+        "state": {
+          "branch": null,
+          "revision": "bd8e6c99af9221077d71aea531446e14bdb6a1fa",
+          "version": "4.0.3"
+        }
+      },
+      {
+        "package": "PayUIndia-DL-SDK",
+        "repositoryURL": "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git",
+        "state": {
+          "branch": "alpha",
+          "revision": "ed80263d5d30cc0e043fa54e060498162b09af7f",
+          "version": null
+        }
+      },
+      {
+        "package": "PayUIndia-NetworkReachability",
+        "repositoryURL": "https://github.com/payu-intrepos/PayUNetworkReachability-iOS",
+        "state": {
+          "branch": null,
+          "revision": "2c4e108fa7654cfca2dbb4f96f176a5788470d18",
+          "version": "2.1.1"
+        }
+      },
+      {
+        "package": "PayUIndia-PPI-SDK",
+        "repositoryURL": "https://github.com/payu-intrepos/PPIManageriOS.git",
+        "state": {
+          "branch": "alpha",
+          "revision": "1232a56b1a0dc27427c8e02d75dd9f5a40e698ce",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
-// swift-module-flags: -target arm64-apple-ios15.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWParamKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios15.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWParamKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
 import Foundation
 import Swift
 import _Concurrency
@@ -20,9 +20,8 @@ import _SwiftConcurrencyShims
   @objc public var clientTxnId: Swift.String?
   @objc public var customerMobile: Swift.String?
   @objc public var requestDateTime: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, customerMobile: Swift.String?, requestDateTime: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWPinCodeResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -73,9 +72,7 @@ import _SwiftConcurrencyShims
   @objc public var clientTxnId: Swift.String?
   @objc public var requestDateTime: Swift.String?
   @objc public var customerMobile: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil)
-  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWLoadMoneyResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -114,6 +111,7 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String
   @objc public var seamlessTxn: Swift.Bool
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, customer: PayUOLWParamKit.OLWLoadMoneyCustomerInfo, surl: Swift.String, furl: Swift.String, currency: Swift.String = "INR", loadAmount: Swift.Int, customerId: Swift.String, seamlessTxn: Swift.Bool = false)
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class OLWLoadMoneyCustomerInfo : ObjectiveC.NSObject {
@@ -121,10 +119,11 @@ import _SwiftConcurrencyShims
   @objc public var lastName: Swift.String?
   @objc public var email: Swift.String?
   @objc public var mobileNumber: Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(firstName: Swift.String, lastName: Swift.String?, email: Swift.String?, mobileNumber: Swift.String)
-  #endif
   @objc deinit
+}
+extension PayUOLWParamKit.OLWLoadMoneyCustomerInfo : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class OLWSetWalletLimitResponse : PayUOLWParamKit.OLWBaseResponse {
   @objc public var responseDateTime: Swift.String?
@@ -255,9 +254,8 @@ import _SwiftConcurrencyShims
   @objc public var statusType: Swift.String?
   @objc public var reserved1: Swift.String?
   @objc public var reserved2: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, accountNumber: Swift.String?, statusType: Swift.String?, reserved1: Swift.String? = nil, reserved2: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWChangeWalletStatusResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -279,9 +277,8 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String?
   @objc public var requestDateTime: Swift.String?
   @objc public var urn: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUCreateDisputeRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -299,9 +296,8 @@ import _SwiftConcurrencyShims
   @objc public var disputeReasonId: Swift.String?
   @objc public var disputeComment: Swift.String?
   @objc public var createdBy: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String? = nil, urn: Swift.String? = nil, registeredMobileNo: Swift.String? = nil, requesterEmail: Swift.String? = nil, benificiaryMobileNo: Swift.String? = nil, clientTxnId: Swift.String?, txnDateTime: Swift.String?, eventId: Swift.Int, transactionId: Swift.String, merchantName: Swift.String? = nil, txnAmount: Swift.String? = nil, disputeReasonId: Swift.String? = nil, disputeComment: Swift.String? = nil, requestSource: Swift.String? = nil, createdBy: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class OLWKYCStatusAPIRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -311,9 +307,8 @@ import _SwiftConcurrencyShims
   @objc public var kycType: Swift.Int
   @objc public var kycStatus: Swift.String?
   @objc public var kycUpdateStatus: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, eventId: Swift.String? = nil, kycType: Swift.Int = 0, kycStatus: Swift.String? = nil, kycUpdateStatus: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWCreateServiceResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -357,6 +352,7 @@ import _SwiftConcurrencyShims
 @objc public class PayUMerchantDetailRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var ifscCodes: [Swift.String]
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, ifscCodes: [Swift.String])
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWFetchBeneficiaryLimitResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -382,9 +378,8 @@ import _SwiftConcurrencyShims
   @objc public var mobile: Swift.String?
   @objc public var fromDate: Swift.String?
   @objc public var toDate: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String? = nil, urn: Swift.String? = nil, mobile: Swift.String? = nil, fromDate: Swift.String?, toDate: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWFetchAllServiceResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -396,14 +391,14 @@ import _SwiftConcurrencyShims
   @objc public var customerMobile: Swift.String?
   public var modeId: Swift.Int?
   @objc public var redirectionUrl: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, modeId: Swift.Int = 0, redirectionUrl: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUDisputeDetailRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var viewServiceRequestId: Swift.Int
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, viewServiceRequestId: Swift.Int)
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUTransactionHistoryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -417,14 +412,14 @@ import _SwiftConcurrencyShims
   @objc public var pageNumber: Swift.Int
   @objc public var count: Swift.Int
   @objc public var fromRowId: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, customerId: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String?, fromDate: Swift.String? = nil, toDate: Swift.String? = nil, pageNumber: Swift.Int = 0, count: Swift.Int = 0, fromRowId: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUPinCodeRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var pinCode: Swift.String
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, pinCode: Swift.String)
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWStatementInquiryResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -508,9 +503,7 @@ import _SwiftConcurrencyShims
   @objc public var serviceRequestNo: Swift.Int
   @objc public var txnType: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(transactionAmount: Swift.String?, transactionDate: Swift.String?, transRefNumber: Swift.String?, clientTxnId: Swift.String?, status: Swift.String?, authEpfTxnId: Swift.String?, reserved2: Swift.String?, merchantName: Swift.String?, serviceRequestNo: Swift.Int)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -589,9 +582,8 @@ import _SwiftConcurrencyShims
   @objc public var customerMobile: Swift.String?
   @objc public var customerId: Swift.String?
   @objc public var urn: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, customerId: Swift.String? = nil, urn: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWRetrieveCustomerResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -707,9 +699,7 @@ import _SwiftConcurrencyShims
   @objc public var lastModifyDate: Swift.String?
   @objc public var requestSource: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(currentStatus: Swift.String?, txnDateTime: Swift.String?, transactionId: Swift.String?, merchantName: Swift.String?, txnAmount: Swift.String?, disputeReason: Swift.String?, disputeComment: Swift.String?, createdDateTime: Swift.String?, requestSource: Swift.String?, serviceRequestNo: Swift.Int, operationComment: Swift.String? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -737,9 +727,8 @@ import _SwiftConcurrencyShims
   @objc public var riskCategory: Swift.String?
   @objc public var formFactorRequired: Swift.Bool
   @objc public var docList: [PayUOLWParamKit.CustomerDocList]?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, productId: Swift.Int, clientTxnId: Swift.String, customerDetails: PayUOLWParamKit.CustomerDetails, sorCustomerId: Swift.String? = nil, addressDetails: PayUOLWParamKit.AddressDetails? = nil, kycProfile: Swift.Int, riskCategory: Swift.String, formFactorRequired: Swift.Bool, docList: [PayUOLWParamKit.CustomerDocList]? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class CustomerDetails : ObjectiveC.NSObject {
@@ -752,9 +741,7 @@ import _SwiftConcurrencyShims
   @objc public var dateOfBirth: Swift.String?
   @objc public var mobileNumber: Swift.String
   @objc public var emailAddress: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(customerId: Swift.String?, title: Swift.String?, firstName: Swift.String, lastName: Swift.String?, middleName: Swift.String?, gender: Swift.String?, dateOfBirth: Swift.String?, mobileNumber: Swift.String, emailAddress: Swift.String?)
-  #endif
   @objc deinit
 }
 @objc public class AddressDetails : ObjectiveC.NSObject {
@@ -764,19 +751,24 @@ import _SwiftConcurrencyShims
   @objc public var state: Swift.String?
   @objc public var country: Swift.String?
   @objc public var zipCode: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(address: Swift.String? = nil, address2: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, country: Swift.String? = nil, zipCode: Swift.String? = nil)
-  #endif
   @objc deinit
 }
 @objc public class CustomerDocList : ObjectiveC.NSObject {
   @objc public var ovdType: Swift.String?
   @objc public var ovdNo: Swift.String?
   @objc public var ovdExpDate: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(ovdType: Swift.String, ovdNo: Swift.String, ovdExpDate: Swift.String? = nil)
-  #endif
   @objc deinit
+}
+extension PayUOLWParamKit.CustomerDetails : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension PayUOLWParamKit.AddressDetails : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension PayUOLWParamKit.CustomerDocList : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public class PayUSetResetMPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var clientTxnId: Swift.String?
@@ -787,9 +779,8 @@ import _SwiftConcurrencyShims
   @objc public var action: Swift.String?
   @objc public var oldMpin: Swift.String?
   @objc public var deviceId: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, newMpin: Swift.String? = nil, otp: Swift.String? = nil, action: Swift.String? = nil, oldMpin: Swift.String? = nil, deviceId: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PaymentResponseModel : Swift.Codable {
@@ -823,9 +814,8 @@ import _SwiftConcurrencyShims
   @objc public var urn: Swift.String?
   @objc public var enablementType: Swift.Int
   @objc public var transactionProfile: [PayUOLWParamKit.OLWTransactionProfile]
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil, enablementType: Swift.Int = 0, transactionProfile: [PayUOLWParamKit.OLWTransactionProfile])
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWTransactionProfileResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -850,9 +840,8 @@ import _SwiftConcurrencyShims
   @objc public var addressDetails: PayUOLWParamKit.PayUPhysicalCardAddressDetails?
   @objc public var nameOnCard: Swift.String?
   @objc public var cardFee: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, customerId: Swift.String?, urn: Swift.String?, programId: Swift.String?, nameOnCard: Swift.String?, cardFee: Swift.String? = "0", addressDetails: PayUOLWParamKit.PayUPhysicalCardAddressDetails?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUPhysicalCardAddressDetails : ObjectiveC.NSObject {
@@ -863,10 +852,11 @@ import _SwiftConcurrencyShims
   @objc public var state: Swift.String?
   @objc public var country: Swift.String?
   @objc public var zipCode: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(name: Swift.String?, addressLine1: Swift.String?, addressLine2: Swift.String?, city: Swift.String?, state: Swift.String?, country: Swift.String?, zipCode: Swift.String?)
-  #endif
   @objc deinit
+}
+extension PayUOLWParamKit.PayUPhysicalCardAddressDetails : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public class PayUCreateBeneficiaryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var messageCode: Swift.Int
@@ -879,9 +869,8 @@ import _SwiftConcurrencyShims
   @objc public var requestDateTime: Swift.String?
   @objc public var beneficiaryTypeCode: Swift.Int
   @objc public var maxTransactionAmountPerMonth: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.Int, clientTxnId: Swift.String, customerId: Swift.String? = nil, urn: Swift.String? = nil, customerMobile: Swift.String? = nil, bankName: Swift.String? = nil, beneficiaryName: Swift.String, bankAccountNumber: Swift.String? = nil, ifscCode: Swift.String? = nil, requestDateTime: Swift.String, beneficiaryTypeCode: Swift.Int, maxTransactionAmountPerMonth: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUDeleteBeneficiaryRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -892,16 +881,14 @@ import _SwiftConcurrencyShims
   @objc public var requestDateTime: Swift.String?
   @objc public var customerMobile: Swift.String?
   @objc public var customerId: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String, clientTxnId: Swift.String, beneficiaryId: Swift.String, customerMobile: Swift.String?, customerId: Swift.String?, urn: Swift.Int, requestDateTime: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUPaymentLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var customerId: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWFetchBeneficiaryListResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -936,9 +923,7 @@ import _SwiftConcurrencyShims
   @objc public var beneficiaryLimitOutstandingMonthlyLimit: Swift.Int
   @objc public var beneficiaryMaxCountTransactionsPerMonthOutstandingLimit: Swift.Int
   required public init(from decoder: any Swift.Decoder) throws
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(beneficiaryId: Swift.Int = 0, beneficiaryName: Swift.String?, bankName: Swift.String?, bankAccountNumber: Swift.String?, ifscCode: Swift.String?, upiVpa: Swift.String?, mobileNumber: Swift.String?, emailId: Swift.String?, walletProgram: Swift.String?, status: Swift.Int = 0, coolingOff: Swift.Int = 0, beneficiaryType: Swift.Int = 0, beneficiaryTypeCode: Swift.Int = 0, createdTime: Swift.String?, modifiedTime: Swift.String?, maxTransactionAmountPerMonth: Swift.Int = 0, beneficiaryLimitOutstandingMonthlyLimit: Swift.Int = 0, beneficiaryMaxCountTransactionsPerMonthOutstandingLimit: Swift.Int = 0)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -998,9 +983,8 @@ import _SwiftConcurrencyShims
   @objc public var beneficiaryType: Swift.String?
   @objc public var beneficiaryName: Swift.String?
   @objc public var maxTransactionAmountPerMonth: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String, beneficiaryId: Swift.Int, beneficiaryName: Swift.String? = nil, maxTransactionAmountPerMonth: Swift.String? = nil, requestDateTime: Swift.String? = nil, beneficiaryType: Swift.String? = "SELF")
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWTransactionStatusResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1019,9 +1003,8 @@ import _SwiftConcurrencyShims
 @objc public class PayUFetchCardLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var customerId: Swift.String?
   @objc public var urn: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, urn: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUResetCardPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -1031,9 +1014,8 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String?
   @objc public var requestDateTime: Swift.String?
   @objc public var urn: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, newPIN: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil, urn: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWUpdateBeneficiaryResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1059,9 +1041,8 @@ import _SwiftConcurrencyShims
   @objc public var beneficiaryId: Swift.String?
   @objc public var activationStatus: Swift.String?
   @objc public var transferType: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, customerId: Swift.String? = nil, urn: Swift.String? = nil, customerMobile: Swift.String? = nil, beneficiaryId: Swift.String? = nil, activationStatus: Swift.String? = nil, transferType: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class OLWTransactionStatusRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -1071,9 +1052,8 @@ import _SwiftConcurrencyShims
   @objc public var urn: Swift.String?
   @objc public var customerId: Swift.String?
   @objc public var requestDateTime: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String? = nil, customerId: Swift.String? = nil, requestDateTime: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWFetchPaymentLimitResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1119,15 +1099,15 @@ import _SwiftConcurrencyShims
   @objc public var fundFlowType: Swift.String
   @objc public var implId: Swift.String
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String, fundFlowType: Swift.String, implId: Swift.String)
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUUpdateWalletLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var customerId: Swift.String?
   @objc public var clientTxnId: Swift.String?
   @objc public var walletLimits: [PayUOLWParamKit.OLWSetUpdateWalletLimit]?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, clientTxnId: Swift.String?, walletLimits: [PayUOLWParamKit.OLWSetUpdateWalletLimit]?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class OLWSetUpdateWalletLimit : ObjectiveC.NSObject {
@@ -1137,10 +1117,11 @@ import _SwiftConcurrencyShims
   @objc public var monthlyUnloadLimit: Swift.Double
   @objc public var annualUnloadLimit: Swift.Double
   @objc public var annualLoadLimit: Swift.Double
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(accountNumber: Swift.String?, perTransactionLimit: Swift.Double, dailyUnloadLimit: Swift.Double, monthlyUnloadLimit: Swift.Double, annualUnloadLimit: Swift.Double, annualLoadLimit: Swift.Double)
-  #endif
   @objc deinit
+}
+extension PayUOLWParamKit.OLWSetUpdateWalletLimit : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWUpdateProfileResponse : PayUOLWParamKit.OLWBaseResponse {
   @objc public var customerId: Swift.String?
@@ -1159,9 +1140,8 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String?
   @objc public var reserved1: Swift.String?
   @objc public var reserved2: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, requestDateTime: Swift.String? = nil, last4Digits: Swift.String? = nil, urn: Swift.String? = nil, blockType: Swift.String? = nil, customerId: Swift.String? = nil, reserved1: Swift.String? = nil, reserved2: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWW2AIMPSFundTransferResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1189,9 +1169,8 @@ import _SwiftConcurrencyShims
   @objc public var customerDetails: PayUOLWParamKit.CustomerDetails?
   @objc public var addressDetails: PayUOLWParamKit.AddressDetails?
   @objc public var docList: [PayUOLWParamKit.CustomerDocList]?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerId: Swift.String?, productId: Swift.String?, cardProfileId: Swift.String?, customerDetails: PayUOLWParamKit.CustomerDetails? = nil, addressDetails: PayUOLWParamKit.AddressDetails? = nil, docList: [PayUOLWParamKit.CustomerDocList]? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUVerifyMPinRequest : PayUOLWParamKit.PayUOLWBaseRequest {
@@ -1202,9 +1181,8 @@ import _SwiftConcurrencyShims
   @objc public var deviceId: Swift.String?
   @objc public var requestDateTime: Swift.String?
   @objc public var token: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, messageCode: Swift.String? = nil, clientTxnId: Swift.String? = nil, customerMobile: Swift.String? = nil, mpin: Swift.String? = nil, deviceId: Swift.String? = nil, requestDateTime: Swift.String? = nil, token: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWRetrieveCustomerJITResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1239,9 +1217,8 @@ import _SwiftConcurrencyShims
   @objc public var token: Swift.String?
   @objc public var deviceId: Swift.String?
   @objc public var otp: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String?, requestIp: Swift.String?, senders: [PayUOLWParamKit.OLWW2WFundTransferSender]?, receivers: [PayUOLWParamKit.OLWW2WFundTransferReceiver]?, mpin: Swift.String?, token: Swift.String?, deviceId: Swift.String?, otp: Swift.String? = nil)
-  #endif
   @objc deinit
 }
 @objc public class OLWW2WFundTransferSender : ObjectiveC.NSObject, Swift.Codable {
@@ -1256,9 +1233,7 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String?
   @objc public var accosaRefNo: Swift.Int
   @objc public var availaleBalance: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc required public init(urn: Swift.Int, accountNumber: Swift.String?, transactionAmount: Swift.Int, sourceAccountType: Swift.Int, sourceAccount: Swift.String? = nil, reserved1: Swift.String?, reserved2: Swift.String?, reserved3: Swift.String?, customerId: Swift.String? = nil, accosaRefNo: Swift.Int = 0, availaleBalance: Swift.String? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1273,9 +1248,7 @@ import _SwiftConcurrencyShims
   @objc public var customerId: Swift.String?
   @objc public var accosaRefNo: Swift.Int
   @objc public var availaleBalance: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc required public init(urn: Swift.Int, accountNumber: Swift.String? = nil, transactionAmount: Swift.Int, reserved4: Swift.String?, reserved5: Swift.String?, reserved6: Swift.String? = nil, customerId: Swift.String?, accosaRefNo: Swift.Int, availaleBalance: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1292,9 +1265,7 @@ import _SwiftConcurrencyShims
   @objc public var furl: Swift.String?
   @objc public var kycRedirectionUrl: Swift.String?
   @objc public var payUReferenceId: Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(merchantKey: Swift.String, merchantLogo: Swift.String?, primaryColor: Swift.String?, customerMobile: Swift.String, termsAndConditionsURL: Swift.String?, merchantSupportEmail: Swift.String, isProd: Swift.Bool = true, kycRedirectionUrl: Swift.String?, payUReferenceId: Swift.String)
-  #endif
   @objc override dynamic open var description: Swift.String {
     @objc get
   }
@@ -1308,11 +1279,12 @@ import _SwiftConcurrencyShims
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class PayUOLWBaseRequest : ObjectiveC.NSObject {
+@objc public class PayUOLWBaseRequest : ObjectiveC.NSObject, Swift.Encodable {
   @objc public var payUReferenceId: Swift.String
   @objc public var merchantKey: Swift.String
   @objc public var isProduction: Swift.Bool
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool = true)
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWVerifyOTPResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1340,16 +1312,14 @@ import _SwiftConcurrencyShims
   @objc public var token: Swift.String?
   @objc public var deviceId: Swift.String?
   @objc public var otp: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, clientTxnId: Swift.String?, requestDateTime: Swift.String? = nil, customerMobile: Swift.String? = nil, customerId: Swift.String?, accountNumber: Swift.String? = nil, requestIp: Swift.String?, creditAccountNumber: Swift.String?, beneficiaryIFSC: Swift.String?, paymentDescription: Swift.String? = nil, transferType: Swift.Int, currency: Swift.String? = "INR", amount: Swift.String? = nil, receiverInfo: Swift.String? = nil, mpin: Swift.String?, token: Swift.String?, deviceId: Swift.String?, otp: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUSendOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var mobileNumber: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWSendOTPResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1362,9 +1332,8 @@ import _SwiftConcurrencyShims
 @objc public class PayUFetchWalletLevelLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var customerId: Swift.String?
   @objc public var accountNumber: [Swift.String]
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, customerId: Swift.String?, accountNumber: [Swift.String])
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWSetResetMpinResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1382,9 +1351,8 @@ import _SwiftConcurrencyShims
   @objc public var mobileNumber: Swift.String?
   @objc public var otp: Swift.String?
   @objc public var uuid: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?, otp: Swift.String?, uuid: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class OLWResendOTPResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1405,15 +1373,15 @@ import _SwiftConcurrencyShims
   @objc public var dailyLimit: Swift.Double
   @objc public var monthlyLimit: Swift.Double
   @objc public var yearlyLimit: Swift.Double
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, programId: Swift.String?, customerId: Swift.String, urn: Swift.String?, kycProfileId: Swift.String?, fundFlowType: Swift.String, channelId: Swift.String, perTxnLimit: Swift.Double = 0.0, dailyLimit: Swift.Double = 0.0, monthlyLimit: Swift.Double = 0.0, yearlyLimit: Swift.Double = 0.0)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUFetchBeneficiaryLimitRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var beneficiaryId: Swift.String
   @objc public var programId: Swift.Int
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, beneficiaryId: Swift.String, programId: Swift.Int)
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class OLWVerifyOTPForResetPINResponse : PayUOLWParamKit.OLWBaseResponse {
@@ -1516,24 +1484,21 @@ import _SwiftConcurrencyShims
   @objc public var monthlyCount: Swift.String?
   @objc public var yearlyCount: Swift.String?
   @objc public var outstandingBalance: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, id: Swift.String? = nil, perTxnLimit: Swift.String? = nil, dailyLimit: Swift.String? = nil, monthlyLimit: Swift.String? = nil, yearlyLimit: Swift.String? = nil, dailyCount: Swift.String? = nil, monthlyCount: Swift.String? = nil, yearlyCount: Swift.String? = nil, outstandingBalance: Swift.String? = nil)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUFetchIfscDetailsRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var ifscCode: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, ifscCode: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public class PayUResendOTPRequest : PayUOLWParamKit.PayUOLWBaseRequest {
   @objc public var mobileNumber: Swift.String?
   @objc public var uuid: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, mobileNumber: Swift.String?, uuid: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class PayUOLWCoreServiceResponse : ObjectiveC.NSObject {
@@ -1564,8 +1529,7 @@ import _SwiftConcurrencyShims
   @objc public var uuid: Swift.String?
   @objc public var mobileNumber: Swift.String?
   @objc public var walletUrn: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(payUReferenceId: Swift.String, merchantKey: Swift.String, isProduction: Swift.Bool, otp: Swift.String?, uuid: Swift.String?, mobileNumber: Swift.String?, walletUrn: Swift.String?)
-  #endif
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }

@@ -1,14 +1,8 @@
 // swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
+// SPM dependency pins are generated from versions.yaml (see docs/RELEASE_AUTOMATION.md).
 
 import PackageDescription
-
-let VERSION_ANALYTICS_KIT: PackageDescription.Version = "4.1.0"
-let VERSION_CRASH_REPORTER: PackageDescription.Version = "4.0.3"
-let VERSION_NETWORK_REACHABILITY: PackageDescription.Version = "2.1.1"
-let VERSION_CUSTOM_BROWSER: PackageDescription.Version = "11.3.0"
-let VERSION_DL_SDK: PackageDescription.Version = "1.0.0"
-let VERSION_PPI_SDK: PackageDescription.Version = "1.2.0"
 
 let package = Package(
     name: "PayUIndia-OLW-SDK",
@@ -23,14 +17,15 @@ let package = Package(
             targets: ["PayUIndia-OLWUI-SDKTarget"])
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        .package(name: "PayUIndia-NetworkReachability", url: "https://github.com/payu-intrepos/PayUNetworkReachability-iOS.git", from: VERSION_NETWORK_REACHABILITY),
-        .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", from: VERSION_ANALYTICS_KIT),
-        .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: VERSION_CRASH_REPORTER),
-        .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", from: VERSION_CUSTOM_BROWSER),
-        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", from: VERSION_DL_SDK),
-        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", from: VERSION_PPI_SDK)
-        
+        // BEGIN:GENERATED_SPM_DEPS
+        // Generated from versions.yaml — run: ruby scripts/release/sync-versions.rb
+        .package(name: "PayUIndia-NetworkReachability", url: "https://github.com/payu-intrepos/PayUNetworkReachability-iOS.git", from: "2.1.1"),
+        .package(name: "PayUIndia-Analytics", url: "https://github.com/payu-intrepos/PayUAnalytics-iOS.git", branch: "alpha"),
+        .package(name: "PayUIndia-CrashReporter", url: "https://github.com/payu-intrepos/PayUCrashReporter-iOS.git", from: "4.0.3"),
+        .package(name: "PayUIndia-Custom-Browser", url: "https://github.com/payu-intrepos/iOS-Custom-Browser.git", branch: "alpha"),
+        .package(name: "PayUIndia-DL-SDK", url: "https://github.com/payu-intrepos/PayUDesignLibraryiOS.git", branch: "alpha"),
+        .package(name: "PayUIndia-PPI-SDK", url: "https://github.com/payu-intrepos/PPIManageriOS.git", branch: "alpha"),
+        // END:GENERATED_SPM_DEPS
     ],
     targets: [
         .binaryTarget(name: "PayUOLWCoreKit", path: "./PayUOLWCoreKit.xcframework"),

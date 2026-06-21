@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = "PayUIndia-OLWParams-SDK"
-  s.version             = "1.0.0.alpha.4"
+  s.version             = "1.0.0.alpha.7"
   s.license             = "MIT"
   s.homepage            = "https://github.com/payu-intrepos/PayUOLWSDK-iOS"
   s.author              = { "PayU" => "mobile.integration@payu.in"  }

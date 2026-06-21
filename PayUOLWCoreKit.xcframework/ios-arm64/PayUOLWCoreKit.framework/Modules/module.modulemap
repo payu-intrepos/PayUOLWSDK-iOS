@@ -1,4 +1,3 @@
 framework module PayUOLWCoreKit {
   header "PayUOLWCoreKit-Swift.h"
-  requires objc
 }

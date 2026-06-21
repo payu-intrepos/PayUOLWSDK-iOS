@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
-// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWCoreKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PayUOLWCoreKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
 import CommonCrypto
 import CryptoKit
 import Foundation
@@ -110,14 +110,10 @@ import _SwiftConcurrencyShims
 @objc public class PayUOLWCoreError : ObjectiveC.NSObject, Foundation.LocalizedError {
   @objc public var message: Swift.String
   @objc public var errorCode: Swift.Int
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(message: Swift.String?, code: Swift.Int = 1)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var errorDescription: Swift.String? {
     @objc get
   }
-  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PayUOLWCore : ObjectiveC.NSObject {
