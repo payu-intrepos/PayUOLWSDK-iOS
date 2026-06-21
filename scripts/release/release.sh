@@ -189,8 +189,9 @@ if [[ "${SKIP_TRUNK}" -eq 0 ]]; then
         exit 1
       fi
 
+      # --synchronous: after pushing Params, Core/UI validation can see the new spec on trunk (CDN lag).
       log "pod trunk push ${pod} (version ${ver}; Keychain session)"
-      run_publish pod trunk push "${podspec}" --allow-warnings --verbose
+      run_publish pod trunk push "${podspec}" --allow-warnings --synchronous
 
       if [[ "${DRY_RUN}" -eq 0 && "${WAIT_AFTER_TRUNK:-0}" == "1" && "${RELEASE_ALLOW_TRUNK:-0}" == "1" ]]; then
         log "WAIT_AFTER_TRUNK: waiting for ${pod} ${ver} to appear on trunk…"
