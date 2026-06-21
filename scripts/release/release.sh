@@ -3,6 +3,7 @@
 # OLW SDK release orchestrator: sync versions, SPM resolve, pod lib lint, git tag/push, trunk push.
 # Credentials: never stored in-repo — use Keychain (pod trunk) and SSH/HTTPS prompts as usual.
 # Debug: VERBOSE=1 prints extra traces (similar intent to debugPrint in Swift sample code).
+# Compatibility: macOS ships Bash 3.2 — no `mapfile`; use read loops below.
 #
 set -euo pipefail
 
@@ -121,7 +122,10 @@ if [[ "${SKIP_GIT}" -eq 0 ]]; then
   fi
   # Unique tag names only (Core and UI may share the same semver).
   export OLW_VERSIONS_YAML="${MANIFEST}"
-  mapfile -t VERSIONS < <(ruby -ryaml -e "v=YAML.load_file(ENV['OLW_VERSIONS_YAML'])['internal_pods'] || {}; puts v.values.uniq.to_a.sort.join(\"\n\")")
+  VERSIONS=()
+  while IFS= read -r _olw_ver; do
+    [[ -n "${_olw_ver}" ]] && VERSIONS+=("${_olw_ver}")
+  done < <(ruby -ryaml -e "v=YAML.load_file(ENV['OLW_VERSIONS_YAML'])['internal_pods'] || {}; puts v.values.uniq.to_a.sort.join(\"\n\")")
   if [[ "${#VERSIONS[@]}" -lt 1 ]]; then
     log "Could not read internal_pods from versions.yaml"
     exit 1
@@ -160,7 +164,10 @@ if [[ "${SKIP_TRUNK}" -eq 0 ]]; then
     MANIFEST="${ROOT}/versions.yaml"
     export OLW_MANIFEST="${MANIFEST}"
     # Dependency order: Params -> Core -> UI (override via versions.yaml → release.trunk_push_order).
-    mapfile -t TRUNK_PODS < <(ruby -ryaml -e '
+    TRUNK_PODS=()
+    while IFS= read -r _olw_pod; do
+      [[ -n "${_olw_pod}" ]] && TRUNK_PODS+=("${_olw_pod}")
+    done < <(ruby -ryaml -e '
       m = YAML.load_file(ENV.fetch("OLW_MANIFEST"))
       o = m.dig("release", "trunk_push_order")
       o ||= %w[PayUIndia-OLWParams-SDK PayUIndia-OLWCore-SDK PayUIndia-OLWUI-SDK]
